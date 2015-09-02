@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M17.879,17.659 C17.644,17.894 17.338,18.012 17.031,18.012 C16.724,18.012 16.418,17.894 16.184,17.659 L11.691,13.139 C10.515,13.982 9.087,14.489 7.537,14.489 C3.571,14.489 0.345,11.243 0.345,7.254 C0.345,3.264 3.571,0.018 7.537,0.018 C11.502,0.018 14.728,3.264 14.728,7.254 C14.728,8.814 14.224,10.25 13.386,11.433 L17.879,15.954 C18.347,16.424 18.347,17.188 17.879,17.659 L17.879,17.659 Z M7.537,2.43 C4.893,2.43 2.742,4.594 2.742,7.254 C2.742,9.913 4.893,12.077 7.537,12.077 C10.18,12.077 12.331,9.913 12.331,7.254 C12.331,4.594 10.18,2.43 7.537,2.43 L7.537,2.43 Z" id="Shape" fill="#B7B8BC" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

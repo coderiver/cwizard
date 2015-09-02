@@ -47,11 +47,430 @@
 // p
 // 	+jpg(bla)
 
++font(Gotham Book, GothamBook)
+=f
+	font-family: "Gotham Book", Arial, sans-serif
++font(Gotham Bold, GothamBold)
+=fb
+	font-family: "Gotham Bold", Arial, sans-serif
++font(Gotham Black, GothamBlack)
+=fbl
+	font-family: "Gotham Black", Arial, sans-serif
+
+$cl: #23232c
+$gray: #424242
+$orange: #fd8e26
 
 body
-	font-family: Arial, sans-serif
-	font-size: 12px
-	line-height: 1.4
-
+	+f
+	font-size: 14px
+	line-height: 1.3
+	color: $cl
+	font-smoothing: antialiased
+a
+	text-decoration: none
+input,
+textarea,
+button
+	+f
+	font-size: 14px
+button
+	background: transparent
 
 // common blocks
+.wrapper
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+.header,
+.footer
+	position: absolute
+	left: 0
+	right: 0
+	height: 60px
+	background: #FFF
+	box-shadow: 0 0 7px rgba(#000,.3)
+	z-index: 4 
+.header
+	top: 0
+	.header__logo
+		float: left
+		margin-right: 10px
+	.header__fb
+		position: relative
+		float: right
+		width: 61px
+		padding-left: 1px
+		line-height: 60px
+		text-align: center
+		font-size: 18px
+		color: $gray
+		&:before
+			content: ""
+			position: absolute
+			top: 10px
+			left: 0
+			bottom: 10px
+			width: 1px
+			background: #ecf0f1 
+	.header__title
+		float: right
+		padding: 0 20px
+		+fbl
+		font-size: 18px
+		line-height: 60px
+		span
+			color: $orange
+	.header__search
+		padding: 12px 0
+		overflow: hidden
+.footer
+	bottom: 0
+	.footer__links
+		float: left
+		padding: 0 20px
+	.footer__copyright
+		float: right
+		padding: 0 20px
+		color: rgba($gray,.5) 
+		line-height: 60px
+
+.container
+	position: absolute
+	top: 60px
+	bottom: 60px
+	left: 0
+	right: 0
+	z-index: 2 
+	
+.aside
+	position: absolute
+	top: 0
+	right: 0
+	width: 300px
+	bottom: 0
+	
+.section
+	position: absolute
+	top: 0
+	left: 0
+	right: 300px
+	bottom: 0
+
+.logo
+	display: block
+	padding: 13px 20px
+	font-size: 0
+	color: $gray
+	.logo__icon,
+	.logo__title
+		display: inline-block
+		vertical-align: middle
+	.logo__icon
+		margin-right: 8px 
+	.logo__title
+		+fb
+		font-size: 18px
+		span
+			margin-right: 1px
+			+f
+			letter-spacing: -1px 
+
+.input
+	width: 100%
+	height: 34px
+	padding: 0 10px
+	border: 1px solid #EBEBEB
+	+placeholder-color(rgba($gray,.7))
+
+.search
+	position: relative
+	.search__input
+		padding-right: 40px
+	.search__btn
+		position: absolute
+		top: 0
+		right: 0
+		width: 40px
+		height: 34px
+		font-size: 0
+		.icon
+			font-size: 18px
+			color: #B7B8BC 
+
+.links
+	display: table
+	.links__item,
+	.links__icon,
+	.links__title
+		display: table-cell
+		height: 60px
+		vertical-align: middle
+	.links__item
+		padding-left: 40px
+		color: $gray
+	.links__icon
+		padding-right: 10px
+		.icon
+			font-size: 30px
+	.links__title
+		color: #808080
+		span
+			+fb
+			color: $gray
+
+.steps
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: #b7b8bc
+	.steps__counter
+		font-size: 0
+		button
+			width: 33.33%
+			height: 60px
+			background: #6F7177 
+			+fbl
+			font-size: 26px
+			&:first-child
+				width: 33.34%
+			&.is-active
+				background: #B7B8BC
+	.steps__item
+		position: absolute
+		top: 60px
+		left: 0
+		right: 0
+		bottom: 0
+	.steps__head
+		height: 160px
+		padding: 15px 20px
+		font-size: 30px
+		line-height: 1.2
+		span
+			display: block
+			+fbl
+			font-size: 56px
+			line-height: 1
+	.steps__foot
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		height: 70px
+		padding: 14px 20px
+		font-size: 0
+	.steps__btn
+		display: inline-block
+		width: 50%
+		padding-left: 10px
+		vertical-align: top
+		&:first-child
+			padding: 0 10px 0 0
+	.steps__prev,
+	.steps__next
+		width: 100%
+		height: 42px
+		background: #DFE0E5 
+		+fbl
+		font-size: 28px
+	.steps__next
+		&:after
+			content: ""
+			display: inline-block
+			margin-left: 8px
+			+arr(12,18,$cl,r)
+	.steps__prev
+		&:before
+			content: ""
+			display: inline-block
+			margin-right: 8px
+			+arr(12,18,$cl,l)
+	.steps__content
+		position: absolute
+		top: 160px
+		left: 0
+		right: 0
+		bottom: 70px
+		padding-left: 20px
+		border: 1px solid #999A9F
+		border-width: 1px 0
+		box-shadow: inset 0 2px 0 #818288, inset 0 -2px 0 #818288
+		overflow: auto
+		&::-webkit-scrollbar
+			width: 8px
+			background: transparent
+		&::-webkit-scrollbar-track
+			background: transparent
+		&::-webkit-scrollbar-thumb
+			background: rgba($cl,.5)
+		&::-webkit-scrollbar-track-piece
+
+
+.checkbox
+	display: block
+	padding: 19px 0 14px 
+	border-top: 1px solid #c5c6c9 
+	border-bottom: 1px solid #999A9F
+	cursor: pointer
+	&:first-child
+		border-top: none
+	&:last-child
+		border-bottom: none 
+	.checkbox__input
+		display: none
+		&:checked + .checkbox__in
+			.checkbox__el
+				border: none
+				.icon
+					display: block
+	.checkbox__in
+		display: block
+		+clr
+	.checkbox__el,
+	.checkbox__flag
+		float: left
+	.checkbox__el
+		position: relative
+		width: 20px
+		height: 20px
+		margin: 8px 20px 0 0
+		border: 2px solid #999a9f
+		font-size: 0
+		.icon
+			display: none
+			position: absolute
+			top: 0
+			left: 0
+			font-size: 20px
+	.checkbox__flag
+		width: 32px
+		margin: 6px 10px 0 0
+		img
+			max-width: 100%
+	.checkbox__title
+		display: table
+		color: #61666C 
+		span
+			display: block
+			margin-bottom: 1px
+			+fbl
+			font-size: 16px
+			color: $cl 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

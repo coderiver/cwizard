@@ -20,9 +20,101 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
-body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; }
+html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-.l { *zoom: 1; }
-.l:after { content: " "; display: table; clear: both; }
-.l .l-col1 { float: left; width: 20%; }
-.l .l-col2 { float: right; width: 70%; }
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+*:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+@font-face { font-family: Gotham Book; src: url("fonts/GothamBook.eot"); src: url("fonts/GothamBook.eot?#iefix") format("embedded-opentype"), url("fonts/GothamBook.woff2") format("woff2"), url("fonts/GothamBook.woff") format("woff"), url("fonts/GothamBook.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: Gotham Bold; src: url("fonts/GothamBold.eot"); src: url("fonts/GothamBold.eot?#iefix") format("embedded-opentype"), url("fonts/GothamBold.woff2") format("woff2"), url("fonts/GothamBold.woff") format("woff"), url("fonts/GothamBold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: Gotham black; src: url("fonts/GothamBlack.eot"); src: url("fonts/GothamBlack.eot?#iefix") format("embedded-opentype"), url("fonts/GothamBlack.woff2") format("woff2"), url("fonts/GothamBlack.woff") format("woff"), url("fonts/GothamBlack.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+body { font-family: "Gotham Book", Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #23232c; font-smoothing: antialiased; }
+
+a { text-decoration: none; }
+
+input, textarea, button { font-family: "Gotham Book", Arial, sans-serif; font-size: 14px; }
+
+button { background: transparent; }
+
+.wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.header, .footer { position: absolute; left: 0; right: 0; height: 60px; background: white; box-shadow: 0 0 7px rgba(0, 0, 0, 0.3); z-index: 4; }
+
+.header { top: 0; }
+.header .header__logo { float: left; margin-right: 10px; }
+.header .header__fb { position: relative; float: right; width: 61px; padding-left: 1px; line-height: 60px; text-align: center; font-size: 18px; color: #424242; }
+.header .header__fb:before { content: ""; position: absolute; top: 10px; left: 0; bottom: 10px; width: 1px; background: #ecf0f1; }
+.header .header__title { float: right; padding: 0 20px; font-family: "Gotham Black", Arial, sans-serif; font-size: 18px; line-height: 60px; }
+.header .header__title span { color: #fd8e26; }
+.header .header__search { padding: 12px 0; overflow: hidden; }
+
+.footer { bottom: 0; }
+.footer .footer__links { float: left; padding: 0 20px; }
+.footer .footer__copyright { float: right; padding: 0 20px; color: rgba(66, 66, 66, 0.5); line-height: 60px; }
+
+.container { position: absolute; top: 60px; bottom: 60px; left: 0; right: 0; z-index: 2; }
+
+.aside { position: absolute; top: 0; right: 0; width: 300px; bottom: 0; }
+
+.section { position: absolute; top: 0; left: 0; right: 300px; bottom: 0; }
+
+.logo { display: block; padding: 13px 20px; font-size: 0; color: #424242; }
+.logo .logo__icon, .logo .logo__title { display: inline-block; vertical-align: middle; }
+.logo .logo__icon { margin-right: 8px; }
+.logo .logo__title { font-family: "Gotham Bold", Arial, sans-serif; font-size: 18px; }
+.logo .logo__title span { margin-right: 1px; font-family: "Gotham Book", Arial, sans-serif; letter-spacing: -1px; }
+
+.input { width: 100%; height: 34px; padding: 0 10px; border: 1px solid #ebebeb; }
+.input:-moz-placeholder, .input::-moz-placeholder { color: rgba(66, 66, 66, 0.7); opacity: 1; }
+.input::-webkit-input-placeholder { color: rgba(66, 66, 66, 0.7); }
+
+.search { position: relative; }
+.search .search__input { padding-right: 40px; }
+.search .search__btn { position: absolute; top: 0; right: 0; width: 40px; height: 34px; font-size: 0; }
+.search .search__btn .icon { font-size: 18px; color: #b7b8bc; }
+
+.links { display: table; }
+.links .links__item, .links .links__icon, .links .links__title { display: table-cell; height: 60px; vertical-align: middle; }
+.links .links__item { padding-left: 40px; color: #424242; }
+.links .links__icon { padding-right: 10px; }
+.links .links__icon .icon { font-size: 30px; }
+.links .links__title { color: gray; }
+.links .links__title span { font-family: "Gotham Bold", Arial, sans-serif; color: #424242; }
+
+.steps { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #b7b8bc; }
+.steps .steps__counter { font-size: 0; }
+.steps .steps__counter button { width: 33.33%; height: 60px; background: #6f7177; font-family: "Gotham Black", Arial, sans-serif; font-size: 26px; }
+.steps .steps__counter button:first-child { width: 33.34%; }
+.steps .steps__counter button.is-active { background: #b7b8bc; }
+.steps .steps__item { position: absolute; top: 60px; left: 0; right: 0; bottom: 0; }
+.steps .steps__head { height: 160px; padding: 15px 20px; font-size: 30px; line-height: 1.2; }
+.steps .steps__head span { display: block; font-family: "Gotham Black", Arial, sans-serif; font-size: 56px; line-height: 1; }
+.steps .steps__foot { position: absolute; left: 0; right: 0; bottom: 0; height: 70px; padding: 14px 20px; font-size: 0; }
+.steps .steps__btn { display: inline-block; width: 50%; padding-left: 10px; vertical-align: top; }
+.steps .steps__btn:first-child { padding: 0 10px 0 0; }
+.steps .steps__prev, .steps .steps__next { width: 100%; height: 42px; background: #dfe0e5; font-family: "Gotham Black", Arial, sans-serif; font-size: 28px; }
+.steps .steps__next:after { content: ""; display: inline-block; margin-left: 8px; width: 0px; height: 0px; border-style: solid; border-width: 9px 0 9px 12px; border-color: transparent transparent transparent #23232c; }
+.steps .steps__prev:before { content: ""; display: inline-block; margin-right: 8px; width: 0px; height: 0px; border-style: solid; border-width: 9px 12px 9px 0; border-color: transparent #23232c transparent transparent; }
+.steps .steps__content { position: absolute; top: 160px; left: 0; right: 0; bottom: 70px; padding-left: 20px; border: 1px solid #999a9f; border-width: 1px 0; box-shadow: inset 0 2px 0 #818288, inset 0 -2px 0 #818288; overflow: auto; }
+.steps .steps__content::-webkit-scrollbar { width: 8px; background: transparent; }
+.steps .steps__content::-webkit-scrollbar-track { background: transparent; }
+.steps .steps__content::-webkit-scrollbar-thumb { background: rgba(35, 35, 44, 0.5); }
+
+.checkbox { display: block; padding: 19px 0 14px; border-top: 1px solid #c5c6c9; border-bottom: 1px solid #999a9f; cursor: pointer; }
+.checkbox:first-child { border-top: none; }
+.checkbox:last-child { border-bottom: none; }
+.checkbox .checkbox__input { display: none; }
+.checkbox .checkbox__input:checked + .checkbox__in .checkbox__el { border: none; }
+.checkbox .checkbox__input:checked + .checkbox__in .checkbox__el .icon { display: block; }
+.checkbox .checkbox__in { display: block; *zoom: 1; }
+.checkbox .checkbox__in:after { content: " "; display: table; clear: both; }
+.checkbox .checkbox__el, .checkbox .checkbox__flag { float: left; }
+.checkbox .checkbox__el { position: relative; width: 20px; height: 20px; margin: 8px 20px 0 0; border: 2px solid #999a9f; font-size: 0; }
+.checkbox .checkbox__el .icon { display: none; position: absolute; top: 0; left: 0; font-size: 20px; }
+.checkbox .checkbox__flag { width: 32px; margin: 6px 10px 0 0; }
+.checkbox .checkbox__flag img { max-width: 100%; }
+.checkbox .checkbox__title { display: table; color: #61666c; }
+.checkbox .checkbox__title span { display: block; margin-bottom: 1px; font-family: "Gotham Black", Arial, sans-serif; font-size: 16px; color: #23232c; }
