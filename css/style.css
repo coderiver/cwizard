@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-thsnmu');
-	src:url('fonts/icomoon.eot?#iefix-thsnmu') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?-thsnmu') format('truetype'),
-		url('fonts/icomoon.woff?-thsnmu') format('woff'),
-		url('fonts/icomoon.svg?-thsnmu#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?-pdomjf');
+	src:url('fonts/icomoon.eot?#iefix-pdomjf') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?-pdomjf') format('truetype'),
+		url('fonts/icomoon.woff?-pdomjf') format('woff'),
+		url('fonts/icomoon.svg?-pdomjf#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,15 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-left:before {
+	content: "\e607";
+}
+.icon-arrow-right:before {
+	content: "\e60b";
+}
+.icon-study-nature:before {
+	content: "\e606";
+}
 .icon-book:before {
 	content: "\e600";
 }
@@ -41,15 +50,6 @@
 .icon-fb:before {
 	content: "\e605";
 }
-.icon-logo .path1:before {
-	content: "\e606";
-	color: rgb(66, 66, 66);
-}
-.icon-logo .path2:before {
-	content: "\e607";
-	margin-left: -1em;
-	color: rgb(253, 142, 38);
-}
 .icon-point:before {
 	content: "\e608";
 }
@@ -58,15 +58,6 @@
 }
 .icon-search:before {
 	content: "\e60a";
-}
-.icon-star .path1:before {
-	content: "\e60b";
-	color: rgb(35, 35, 44);
-}
-.icon-star .path2:before {
-	content: "\e60c";
-	margin-left: -1.064453125em;
-	color: rgb(253, 142, 38);
 }
 .icon-study-art:before {
 	content: "\e60d";

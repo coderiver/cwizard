@@ -11,7 +11,6 @@
 	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<link rel="stylesheet" media="all" href="css/style.css" >
-	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
 <body>
 <!-- wrapper -->
@@ -24,7 +23,11 @@
 				<div class="logo__icon">
 					<img src="img/svg/logo.svg" alt="">
 				</div>
-				<div class="logo__title">study<span>without</span>borders</div>
+				<div class="logo__title">
+					<span class="logo__bold">study</span>
+					<span class="logo__thin">without</span>
+					<span class="logo__bold">borders</span>
+				</div>
 			</a>
 		</div>
 		<a class="header__fb" href="#">
@@ -44,21 +47,157 @@
 	<!-- container -->
 	<div class="container">
 		<!-- section -->
-		<div class="section">
-			
+		<div class="section js-section">
+			<div class="section__bg"></div>
+			<div class="section__wrap">
+				<div class="section__head js-section-head">
+					<!-- selected -->
+					<div class="selected">
+						<div class="selected__title">We’ve found <span>3 287 universities</span> that match your criteria</div>
+						<div class="selected__list">
+							<button class="selected__btn"><span>United States</span><i class="icon icon-del"></i></button>
+							<button class="selected__btn"><span>Ukraine</span><i class="icon icon-del"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="section__body js-section-body">
+					<div class="section__content js-section-content">
+						<!-- content -->
+						<div class="content">
+							<div class="content__title">Where would you <br>like to study?</div>
+							<div class="content__text">Just select a country <br>and a field of study from the list.</div>
+						</div>
+					</div>
+					<div class="section__list js-section-list">
+						<div class="universities__list">
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota Medical School Twin Cities</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo-1.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo-2.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota Medical School Twin Cities</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota Medical School Twin Cities</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo-1.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo-2.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota Medical School Twin Cities</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota Medical School Twin Cities</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+							<!-- university -->
+							<a class="university" href="#">
+								<div class="university__pic">
+									<img src="img/university.jpg" alt="">
+								</div>
+								<div class="university__info">
+									<div class="university__logo">
+										<img src="img/university-logo-1.png" alt="">
+									</div>
+									<div class="university__title">University of Minnesota</div>
+									<div class="university__address">Minneapolis, Minnesota</div>
+								</div>
+							</a>
+						</div>
+						<!-- loader -->
+						<div class="loader">
+							<div class="loader__el">
+								<div class="loader__lines-top"></div>
+								<div class="loader__lines-down"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<!-- aside -->
 		<div class="aside">
 			<!-- steps -->
-			<div class="steps">
+			<div class="steps js-steps">
 				<div class="steps__counter">
-					<button class="is-active">1</button>
-					<button>2</button>
-					<button>3</button>
+					<button class="js-steps-btn is-active">1</button>
+					<button class="js-steps-btn ">2</button>
+					<button class="js-steps-btn ">3</button>
 				</div>
 				<div class="steps__container">
-					<div class="steps__item">
-						<div class="steps__head"><span>where</span>do you want <br>to study?</div>
+					<div class="steps__item js-steps-item" style="display: block;">
+						<div class="steps__head"><span>where</span> do you want <br>to study?</div>
 						<div class="steps__content">
 							<!-- checkbox -->
 							<label class="checkbox">
@@ -67,7 +206,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -80,7 +219,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -93,7 +232,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -106,7 +245,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -119,7 +258,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -132,7 +271,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -145,7 +284,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -158,7 +297,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -171,7 +310,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -184,7 +323,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -197,7 +336,7 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
@@ -210,10 +349,177 @@
 									<span class="checkbox__el">
 										<i class="icon icon-checkbox"></i>
 									</span>
-									<span class="checkbox__flag">
+									<span class="checkbox__pic">
 										<img src="img/us.png" alt="">
 									</span>
 									<span class="checkbox__title"><span>United States</span>2 617 universities</span>
+								</span>
+							</label>
+						</div>
+						<div class="steps__foot">
+							<div class="steps__btn"></div>
+							<div class="steps__btn">
+								<button class="steps__next">next</button>
+							</div>
+						</div>
+					</div>
+					<div class="steps__item js-steps-item">
+						<div class="steps__head"><span>what</span> do you want <br>to study?</div>
+						<div class="steps__content">
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-nature"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-business"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-education"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-tech"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-health"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-art"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-nature"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-business"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-education"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-tech"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-health"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
+								</span>
+							</label>
+							<!-- checkbox -->
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox">
+								<span class="checkbox__in">
+									<span class="checkbox__el">
+										<i class="icon icon-checkbox"></i>
+									</span>
+									<span class="checkbox__pic checkbox__pic_icon">
+										<i class="icon icon-study-art"></i>
+									</span>
+									<span class="checkbox__title"><span>Agriculture, forestry, and veterinary</span>2 617 universities</span>
 								</span>
 							</label>
 						</div>
@@ -223,6 +529,113 @@
 							</div>
 							<div class="steps__btn">
 								<button class="steps__next">next</button>
+							</div>
+						</div>
+					</div>
+					<div class="steps__item js-steps-item">
+						<div class="steps__head"><span>what</span> other criteria<br>to consider?</div>
+						<div class="steps__content steps__content_universities">
+							<div class="steps__filters">
+								<!-- selected -->
+								<div class="selected selected_mobile">
+									<div class="selected__list">
+										<button class="selected__btn"><span>United States</span><i class="icon icon-del"></i></button>
+										<button class="selected__btn"><span>Ukraine</span><i class="icon icon-del"></i></button>
+									</div>
+								</div>
+								<!-- range -->
+								<div class="range">
+									<div class="range__title">Rank of university</div>
+									<div class="range__rank">
+										<div class="range__rank-icon">
+											<i class="icon icon-rank"></i>
+										</div>
+										<div class="range__rank-icon">
+											<i class="icon icon-rank"></i>
+										</div>
+									</div>
+									<div class="range__slider js-range"></div>
+								</div>
+								<!-- range -->
+								<div class="range">
+									<div class="range__title">Tuition Fee</div>
+									<div class="range__rank">
+										<div class="range__rank-icon">
+											<i class="icon icon-dollar"></i>
+										</div>
+										<div class="range__rank-icon">
+											<i class="icon icon-dollar"></i>
+										</div>
+									</div>
+									<div class="range__slider js-range"></div>
+								</div>
+							</div>
+							<!-- universities -->
+							<div class="universities universities_mobile">
+								<div class="universities__list js-university-slider">
+									<div class="universities__item">
+										<!-- university -->
+										<a class="university" href="#">
+											<div class="university__pic">
+												<img src="img/university.jpg" alt="">
+											</div>
+											<div class="university__info">
+												<div class="university__logo">
+													<img src="img/university-logo.png" alt="">
+												</div>
+												<div class="university__title">University of Minnesota Medical School Twin Cities</div>
+												<div class="university__address">Minneapolis, Minnesota</div>
+											</div>
+										</a>
+									</div>
+									<div class="universities__item">
+										<!-- university -->
+										<a class="university" href="#">
+											<div class="university__pic">
+												<img src="img/university.jpg" alt="">
+											</div>
+											<div class="university__info">
+												<div class="university__logo">
+													<img src="img/university-logo-1.png" alt="">
+												</div>
+												<div class="university__title">University of Minnesota</div>
+												<div class="university__address">Minneapolis, Minnesota</div>
+											</div>
+										</a>
+									</div>
+									<div class="universities__item">
+										<!-- university -->
+										<a class="university" href="#">
+											<div class="university__pic">
+												<img src="img/university.jpg" alt="">
+											</div>
+											<div class="university__info">
+												<div class="university__logo">
+													<img src="img/university-logo-2.png" alt="">
+												</div>
+												<div class="university__title">University of Minnesota Medical School Twin Cities</div>
+												<div class="university__address">Minneapolis, Minnesota</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="universities__pager">
+									<button class="universities__prev js-university-prev">
+										<i class="icon icon-arrow-left"></i>
+									</button>
+									<div class="universities__pages">1 of 829</div>
+									<button class="universities__next js-university-next">
+										<i class="icon icon-arrow-right"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="steps__foot">
+							<div class="steps__btn">
+								<button class="steps__prev">back</button>
+							</div>
+							<div class="steps__btn">
+								<button class="steps__help">help?</button>
 							</div>
 						</div>
 					</div>
@@ -237,7 +650,10 @@
 			<div class="links">
 				<a class="links__item" href="#">
 					<div class="links__icon">
-						<img src="img/svg/star.svg" alt="">
+						<div class="links__pictures">
+							<img src="img/svg/star.svg" alt="">
+							<img src="img/svg/star-white.svg" alt="">
+						</div>
 					</div>
 					<div class="links__title">See your university <br><span>feature</span> here</div>
 				</a>

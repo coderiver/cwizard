@@ -62,11 +62,13 @@ $gray: #424242
 $orange: #fd8e26
 
 body
+	min-width: 320px
 	+f
 	font-size: 14px
 	line-height: 1.3
 	color: $cl
 	font-smoothing: antialiased
+	overflow: hidden
 a
 	text-decoration: none
 input,
@@ -78,11 +80,24 @@ button
 	background: transparent
 
 // common blocks
+=scroll
+	overflow: auto
+	+rm(760)
+		&::-webkit-scrollbar
+			width: 8px
+			background: transparent
+		&::-webkit-scrollbar-track
+			background: transparent
+		&::-webkit-scrollbar-thumb
+			background: rgba($cl,.5)
+		&::-webkit-scrollbar-track-piece
+
 .wrapper
 	position: absolute
 	top: 0
 	left: 0
 	width: 100%
+	min-width: 320px
 	height: 100%
 
 .header,
@@ -94,11 +109,15 @@ button
 	background: #FFF
 	box-shadow: 0 0 7px rgba(#000,.3)
 	z-index: 4 
+	+r(1020)
+		height: 50px
 .header
 	top: 0
 	.header__logo
 		float: left
 		margin-right: 10px
+		+r(1020)
+			margin: 0
 	.header__fb
 		position: relative
 		float: right
@@ -106,37 +125,68 @@ button
 		padding-left: 1px
 		line-height: 60px
 		text-align: center
-		font-size: 18px
 		color: $gray
-		&:before
+		+transition(background .2s, color .2s)
+		+vertical
+		+r(1020)
+			line-height: 50px
+		&:hover
+			background: #3A5898
+			color: #fff  
+			&:after
+				left: -1px
+				opacity: 0 
+		&:after
 			content: ""
 			position: absolute
 			top: 10px
 			left: 0
 			bottom: 10px
 			width: 1px
-			background: #ecf0f1 
+			background: #ecf0f1
+			+tr(opacity .2s)
+			+r(1020)
+				top: 5px
+				bottom: 5px
+		.icon
+			font-size: 18px
+			vertical-align: middle
 	.header__title
 		float: right
 		padding: 0 20px
 		+fbl
 		font-size: 18px
 		line-height: 60px
+		+r(1020)
+			padding: 0 10px
+			font-size: 14px
+			line-height: 50px 
+		+r(760)
+			display: none
 		span
 			color: $orange
 	.header__search
 		padding: 12px 0
 		overflow: hidden
+		+r(1020)
+			padding: 7px 0
+		+r(760)
+			display: none
 .footer
 	bottom: 0
+	+r(760)
+		display: none
 	.footer__links
 		float: left
-		padding: 0 20px
 	.footer__copyright
 		float: right
 		padding: 0 20px
 		color: rgba($gray,.5) 
 		line-height: 60px
+		+r(1020)
+			padding: 0 10px 0 0
+			line-height: 50px
+			font-size: 12px
 
 .container
 	position: absolute
@@ -144,7 +194,12 @@ button
 	bottom: 60px
 	left: 0
 	right: 0
-	z-index: 2 
+	z-index: 2
+	+r(1020)
+		top: 50px
+		bottom: 50px
+	+r(760)
+		bottom: 0
 	
 .aside
 	position: absolute
@@ -152,6 +207,8 @@ button
 	right: 0
 	width: 300px
 	bottom: 0
+	+r(760)
+		width: 100%
 	
 .section
 	position: absolute
@@ -159,25 +216,123 @@ button
 	left: 0
 	right: 300px
 	bottom: 0
+	background: #000
+	+r(760)
+		display: none
+	&.is-list-show
+		background: #ebebeb
+		.section__bg,
+		.section__content
+			display: none
+		.section__body
+			&:before
+				display: none
+		.section__list
+			display: block
+		.selected__title
+			color: #46464E
+	&.is-scroll
+		.section__head
+			&:after
+				content: ""
+				position: absolute
+				left: 0
+				right: 0
+				bottom: -3px
+				height: 3px
+				background: rgba(#999A9F,.5)
+	.section__bg,
+	.section__wrap
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+	.section__bg
+		+cover
+		background-image: url(../img/bg.jpg)
+		opacity: .6
+	.section__wrap
+		z-index: 2
+	.section__head,
+	.section__body
+		position: absolute
+		left: 0
+		right: 0
+	.section__head
+		top: 0
+		z-index: 4 
+	.section__body
+		bottom: 0
+		+scroll
+		font-size: 0
+		z-index: 2 
+		&:before
+			content: ""
+			display: inline-block
+			width: 0
+			height: 100%
+			vertical-align: bottom
+	.section__content
+		display: inline-block
+		padding: 40px 60px
+		vertical-align: bottom
+		+r(1020)
+			padding: 20px
+	.section__list
+		display: none
+		padding-top: 4px
+		
+.content
+	align-self: flex-end
+	color: #FFF 
+	vertical-align: bottom
+	.content__title
+		margin-bottom: 25px
+		+fbl
+		font-size: 48px
+		line-height: 1.2
+		+r(1020)
+			margin-bottom: 10px
+			font-size: 42px
+	.content__text
+		font-size: 24px
+		line-height: 1.7
+		+r(1020)
+			font-size: 22px
+	br
+		+r(1020)
+			display: none
 
 .logo
 	display: block
+	min-height: 60px
 	padding: 13px 20px
 	font-size: 0
 	color: $gray
+	+r(1020)
+		min-height: 50px
+		padding: 8px 10px
 	.logo__icon,
 	.logo__title
 		display: inline-block
 		vertical-align: middle
 	.logo__icon
-		margin-right: 8px 
-	.logo__title
-		+fb
+		margin-right: 8px
+	.logo__bold,
+	.logo__thin
+		display: inline-block
 		font-size: 18px
-		span
-			margin-right: 1px
-			+f
-			letter-spacing: -1px 
+		+r(1020)
+			font-size: 0
+			&:first-letter
+				font-size: 18px
+	.logo__bold
+		+fb
+	.logo__thin
+		margin-right: 1px
+		+f
+		letter-spacing: -1px 
 
 .input
 	width: 100%
@@ -207,20 +362,63 @@ button
 	.links__icon,
 	.links__title
 		display: table-cell
-		height: 60px
+		height: 52px
 		vertical-align: middle
+		+r(1020)
+			height: 42px
 	.links__item
-		padding-left: 40px
+		padding: 4px 20px
+		border-bottom: 4px solid transparent 
 		color: $gray
+		+tr(all .2s)
+		+r(1020)
+			padding: 4px 7px
+		&:hover
+			border-color: $orange
+		&:active,
+		&.is-active
+			background: $orange
+			color: #FFF
+			.links__title
+				color: #FFF
+				span
+					color: #FFF
+			.links__pictures
+				img
+					opacity: 0
+					&:last-child
+						opacity: 1 
 	.links__icon
 		padding-right: 10px
+		+r(1020)
+			padding-right: 5px
 		.icon
 			font-size: 30px
+			+r(1020)
+				font-size: 20px
+	.links__pictures
+		display: inline-block
+		position: relative
+		img
+			+tr(opacity .2s)
+			+r(1020)
+				max-height: 20px
+			&:last-child
+				position: absolute
+				top: 0
+				left: 0
+				opacity: 0 
 	.links__title
 		color: #808080
+		+tr(color .2s)
+		+r(1100)
+			font-size: 12px
+		+r(1020)
+			line-height: 1
 		span
 			+fb
 			color: $gray
+			+tr(color .2s)
 
 .steps
 	position: absolute
@@ -237,26 +435,45 @@ button
 			background: #6F7177 
 			+fbl
 			font-size: 26px
+			+tr(background .2s)
+			+r(760)
+				height: 50px
 			&:first-child
 				width: 33.34%
+			&:hover
+				background: #8C8D93 
 			&.is-active
 				background: #B7B8BC
 	.steps__item
+		display: none
 		position: absolute
 		top: 60px
 		left: 0
 		right: 0
 		bottom: 0
+		background: #b7b8bc
+		+r(760)
+			top: 50px
 	.steps__head
 		height: 160px
 		padding: 15px 20px
 		font-size: 30px
 		line-height: 1.2
+		+r(760)
+			height: 50px
+			padding: 11px 0 11px 20px 
+			font-size: 18px
 		span
 			display: block
 			+fbl
 			font-size: 56px
 			line-height: 1
+			+r(760)
+				display: inline
+				font-size: 24px
+		br
+			+r(760)
+				display: none
 	.steps__foot
 		position: absolute
 		left: 0
@@ -265,6 +482,9 @@ button
 		height: 70px
 		padding: 14px 20px
 		font-size: 0
+		+r(760)
+			height: 60px
+			padding: 11px 30px
 	.steps__btn
 		display: inline-block
 		width: 50%
@@ -273,24 +493,46 @@ button
 		&:first-child
 			padding: 0 10px 0 0
 	.steps__prev,
-	.steps__next
+	.steps__next,
+	.steps__help
 		width: 100%
 		height: 42px
-		background: #DFE0E5 
 		+fbl
 		font-size: 28px
+		+transition(background .2s, box-shadow .2s)
+		+r(760)
+			height: 37px
+			font-size: 24px
+		&:active
+			box-shadow: 0 20px 20px -20px rgba(#000,.2) inset
+	.steps__prev,
+	.steps__next
+		background: #DFE0E5 
+		&:hover
+			background: #EBECEF
+		&:active
+			background: #CFD0D9
 	.steps__next
 		&:after
 			content: ""
 			display: inline-block
 			margin-left: 8px
 			+arr(12,18,$cl,r)
+			+r(760)
+				+arr(8,14,$cl,r)
 	.steps__prev
 		&:before
 			content: ""
 			display: inline-block
 			margin-right: 8px
 			+arr(12,18,$cl,l)
+	.steps__help
+		background: #178147
+		color: #FFF 
+		&:hover
+			background: #23a15c
+		&:active
+			background: #126f3c 
 	.steps__content
 		position: absolute
 		top: 160px
@@ -300,25 +542,32 @@ button
 		padding-left: 20px
 		border: 1px solid #999A9F
 		border-width: 1px 0
-		box-shadow: inset 0 2px 0 #818288, inset 0 -2px 0 #818288
-		overflow: auto
-		&::-webkit-scrollbar
-			width: 8px
-			background: transparent
-		&::-webkit-scrollbar-track
-			background: transparent
-		&::-webkit-scrollbar-thumb
-			background: rgba($cl,.5)
-		&::-webkit-scrollbar-track-piece
-
+		+scroll
+		+r(760)
+			top: 50px
+			bottom: 60px
+	.steps__content_universities
+		+r(760)
+			padding: 0
+			background: #ebebeb 
+	.steps__filters
+		+r(760)
+			display: none
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
 
 .checkbox
 	display: block
-	padding: 19px 0 14px 
+	padding: 19px 10px 14px 0
 	border-top: 1px solid #c5c6c9 
 	border-bottom: 1px solid #999A9F
 	+nosel
 	cursor: pointer
+	&:hover
+		.checkbox__el
+			border-color: #737378
 	&:first-child
 		border-top: none
 	&:last-child
@@ -327,14 +576,14 @@ button
 		display: none
 		&:checked + .checkbox__in
 			.checkbox__el
-				border: none
+				border-color: transparent
 				.icon
-					display: block
+					opacity: 1 
 	.checkbox__in
 		display: block
 		+clr
 	.checkbox__el,
-	.checkbox__flag
+	.checkbox__pic
 		float: left
 	.checkbox__el
 		position: relative
@@ -343,17 +592,30 @@ button
 		margin: 8px 20px 0 0
 		border: 2px solid #999a9f
 		font-size: 0
+		+tr(border-color .2s)
 		.icon
-			display: none
 			position: absolute
-			top: 0
-			left: 0
+			top: -2px
+			left: -2px
 			font-size: 20px
-	.checkbox__flag
+			opacity: 0
+			+tr(opacity .2s) 
+	.checkbox__pic
 		width: 32px
 		margin: 6px 10px 0 0
 		img
 			max-width: 100%
+	.checkbox__pic_icon
+		height: 36px
+		margin-top: 0
+		+vertical
+		.icon
+			font-size: 28px
+			vertical-align: middle
+		.icon-study-business
+			font-size: 23px
+		.icon-study-health
+			font-size: 36px
 	.checkbox__title
 		display: table
 		color: #61666C 
@@ -364,10 +626,223 @@ button
 			font-size: 16px
 			color: $cl 
 
+.range
+	padding: 25px 20px 25px 0
+	border-bottom: 1px solid #999A9F
+	box-shadow: 0 1px 0 #c5c6c9
+	.range__title
+		margin-bottom: 3px
+		+fb
+		font-size: 20px
+	.range__rank
+		margin-bottom: 10px
+		color: #7B7B82
+		font-size: 0
+	.range__rank-icon
+		display: inline-block
+		width: 50%
+		vertical-align: bottom
+		font-size: 16px 
+		&:last-child
+			font-size: 24px
+			text-align: right
+	.ui-slider
+		position: relative
+		height: 8px
+		background: #999A9F
+	.ui-slider-range
+		position: absolute
+		top: 0
+		bottom: 0
+		background: #5e5e65 
+	.ui-slider-handle
+		position: absolute
+		top: -6px
+		margin-left: -10px
+		width: 20px
+		height: 20px
+		background: $orange
+		+tr(background .2s)
+		cursor: pointer
+		&:hover
+			background: #FFAE00 
 
+.selected
+	padding: 25px 60px 20px
+	+r(1020)
+		padding: 20px 20px 10px
+	&.selected_mobile
+		display: none
+		padding: 20px 0 10px
+		border-bottom: 1px solid #999A9F
+		box-shadow: 0 1px 0 #c5c6c9
+		+r(760)
+			display: block
+	.selected__title
+		margin-bottom: 10px
+		+fb
+		font-size: 28px
+		color: #FFF
+		+r(1020)
+			font-size: 24px
+		span
+			color: $orange
+	.selected__list
+		font-size: 0
+	.selected__btn
+		height: 26px
+		margin: 0 10px 10px 0
+		padding: 2px 10px 0
+		background: $orange 
+		font-size: 0
+		color: #FFF 
+		vertical-align: top
+		&:hover
+			.icon
+				opacity: 1 
+		span
+			font-size: 16px
+		.icon
+			margin-left: 10px
+			font-size: 12px
+			opacity: .5
+			+tr(opacity .2s) 
 
+.universities
+	padding: 0 10px
+	font-size: 0
+	&.universities_mobile
+		display: none
+		padding: 0
+		+r(760)
+			display: block
+	.universities__item
+		padding-top: 10px
+		text-align: center
+	.universities__pager
+		position: relative
+		margin-top: -30px
+		text-align: center
+		font-size: 0
+		z-index: 2
+	.universities__prev,
+	.universities__next,
+	.universities__pages
+		display: inline-block
+		vertical-align: middle
+		font-size: 12px
+		color: #92929D
+	.universities__prev,
+	.universities__next
+		padding: 10px
+	.universities__pages
+		padding-bottom: 2px
 
+.university
+	display: inline-block
+	width: 300px
+	margin: 0 10px 30px
+	background: #FFF
+	box-shadow: 0 1px 3px #C2C9CE
+	vertical-align: top
+	color: $cl 
+	text-align: left
+	+tr(box-shadow .2s)
+	&:hover
+		box-shadow: 0 0 0 3px $orange, 0 1px 3px 3px #C2C9CE
+	.university__pic
+		img
+			max-width: 100%
+	.university__info
+		padding: 0 20px 15px
+	.university__logo
+		position: relative
+		width: 80px
+		height: 80px
+		margin: -40px 0 3px
+		padding: 5px 
+		border-radius: 50%
+		background: #FFF
+		+vertical
+		img
+			max-width: 100%
+			max-height: 100%
+			vertical-align: middle
+	.university__title
+		height: 84px
+		margin-bottom: 10px
+		+fb
+		font-size: 20px
+		line-height: 1.4
+	.university__address
+		font-size: 16px
+		color: #92929D
+		+text-overflow
 
+.loader
+	padding: 20px 0 50px
+	text-align: center
+	font-size: 0
+	.loader__el
+		display: inline-block
+		position: relative
+		width: 30px
+		height: 30px
+		vertical-align: top
+	.loader__lines-top,
+	.loader__lines-down
+		&:before,
+		&:after
+			content: ""
+			display: inline-block
+			width: 15px
+			height: 15px
+			border-style: solid
+			border-color: $gray
+			vertical-align: top
+	.loader__lines-top
+		&:before
+			border-width: 3px 0 0 3px
+			+animation(loader1 2s 0s infinite)
+		&:after
+			border-width: 3px 3px 0 0
+			+animation(loader2 2s 1s infinite)
+	.loader__lines-down
+		&:before
+			border-width: 0 0 3px 3px
+			+animation(loader4 2s 0s infinite)
+		&:after
+			border-width: 0 3px 3px 0
+			+animation(loader3 2s 1s infinite)
+		
++keyframes(loader1)
+	0, 100%
+		+translate(0, 0)
+		border-color: $gray
+	50%
+		+translate(-3px, -3px)
+		border-color: $orange
++keyframes(loader2)
+	0, 100%
+		+translate(0, 0)
+		border-color: $gray
+	50%
+		+translate(3px, -3px)
+		border-color: $orange
++keyframes(loader3)
+	0, 100%
+		+translate(0, 0)
+		border-color: $gray
+	50%
+		+translate(3px, 3px)
+		border-color: $orange
++keyframes(loader4)
+	0, 100%
+		+translate(0, 0)
+		border-color: $gray
+	50%
+		+translate(-3px, 3px)
+		border-color: $orange
 
 
 
