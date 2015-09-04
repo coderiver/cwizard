@@ -102,7 +102,7 @@ button
 
 .header,
 .footer
-	position: absolute
+	position: fixed
 	left: 0
 	right: 0
 	height: 60px
@@ -454,7 +454,14 @@ button
 		background: #b7b8bc
 		+r(760)
 			top: 50px
-	.steps__head
+	.steps__head_info
+		.steps__head-in
+			+r(760)
+				display: none
+		.steps__head-info
+			+r(760)
+				display: block
+	.steps__head-in
 		height: 160px
 		padding: 15px 20px
 		font-size: 30px
@@ -474,6 +481,31 @@ button
 		br
 			+r(760)
 				display: none
+	.steps__head-info
+		display: none
+		overflow: hidden
+	.steps__head-counter
+		float: left
+		padding: 0 20px
+		+fbl
+		font-size: 18px
+		line-height: 50px
+	.steps__head-btn
+		position: relative
+		float: right
+		height: 50px
+		padding: 0 25px
+		font-size: 18px
+		+tr(color .2s)
+		&.is-active
+			color: #fff 
+			&:after
+				content: ""
+				position: absolute
+				bottom: 0
+				left: 50%
+				margin-left: -7px
+				+arr(14,7,#cecfd3,t)
 	.steps__foot
 		position: absolute
 		left: 0
@@ -549,14 +581,18 @@ button
 	.steps__content_universities
 		+r(760)
 			padding: 0
-			background: #ebebeb 
+			background: #ebebeb
+		&.is-gray
+			+r(760)
+				padding: 0 0 20px 20px
+				border-top-color: #CECFD3
+				background: #CECFD3 
 	.steps__filters
 		+r(760)
 			display: none
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
+		&.is-show
+			+r(760)
+				display: block
 
 .checkbox
 	display: block
@@ -630,6 +666,8 @@ button
 	padding: 25px 20px 25px 0
 	border-bottom: 1px solid #999A9F
 	box-shadow: 0 1px 0 #c5c6c9
+	+r(760)
+		box-shadow: 0 1px 0 #d8d9dc
 	.range__title
 		margin-bottom: 3px
 		+fb
@@ -675,7 +713,7 @@ button
 		display: none
 		padding: 20px 0 10px
 		border-bottom: 1px solid #999A9F
-		box-shadow: 0 1px 0 #c5c6c9
+		box-shadow: 0 1px 0 #d8d9dc
 		+r(760)
 			display: block
 	.selected__title
@@ -714,8 +752,9 @@ button
 	&.universities_mobile
 		display: none
 		padding: 0
-		+r(760)
-			display: block
+		&.is-show
+			+r(760)
+				display: block
 	.universities__item
 		padding-top: 10px
 		text-align: center
@@ -844,8 +883,19 @@ button
 		+translate(-3px, 3px)
 		border-color: $orange
 
+.page
+	padding: 80px 320px 20px 20px
 
-
+.menu
+	position: fixed
+	top: 60px
+	right: 0
+	bottom: 0
+	width: 300px
+	background-color: #B7B8BC
+	box-shadow: 0 0 7px #C2C9CE
+	overflow: auto
+	z-index: 2 
 
 
 

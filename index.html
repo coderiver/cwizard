@@ -197,7 +197,9 @@
 				</div>
 				<div class="steps__container">
 					<div class="steps__item js-steps-item" style="display: block;">
-						<div class="steps__head"><span>where</span> do you want <br>to study?</div>
+						<div class="steps__head">
+							<div class="steps__head-in"><span>where</span> do you want <br>to study?</div>
+						</div>
 						<div class="steps__content">
 							<!-- checkbox -->
 							<label class="checkbox">
@@ -364,7 +366,9 @@
 						</div>
 					</div>
 					<div class="steps__item js-steps-item">
-						<div class="steps__head"><span>what</span> do you want <br>to study?</div>
+						<div class="steps__head">
+							<div class="steps__head-in"><span>what</span> do you want <br>to study?</div>
+						</div>
 						<div class="steps__content">
 							<!-- checkbox -->
 							<label class="checkbox">
@@ -533,9 +537,15 @@
 						</div>
 					</div>
 					<div class="steps__item js-steps-item">
-						<div class="steps__head"><span>what</span> other criteria<br>to consider?</div>
-						<div class="steps__content steps__content_universities">
-							<div class="steps__filters">
+						<div class="steps__head steps__head_info">
+							<div class="steps__head-in"><span>what</span> other criteria<br>to consider?</div>
+							<div class="steps__head-info">
+								<div class="steps__head-counter">829 universities</div>
+								<button class="steps__head-btn js-btn-filters">Filters</button>
+							</div>
+						</div>
+						<div class="steps__content steps__content_universities js-steps-content">
+							<div class="steps__filters js-filters">
 								<!-- selected -->
 								<div class="selected selected_mobile">
 									<div class="selected__list">
@@ -571,7 +581,7 @@
 								</div>
 							</div>
 							<!-- universities -->
-							<div class="universities universities_mobile">
+							<div class="universities universities_mobile js-universities-mobile is-show">
 								<div class="universities__list js-university-slider">
 									<div class="universities__item">
 										<!-- university -->

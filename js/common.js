@@ -93,4 +93,18 @@ head.ready(function() {
 		};
 	}());
 
+	// filters
+	(function () {
+		var btn          = $('.js-btn-filters'),
+			filters      = $('.js-filters'),
+			universities = $('.js-universities-mobile'),
+			content      = $('.js-steps-content');
+		btn.on('click', function () {
+			btn.toggleClass('is-active');
+			content.toggleClass('is-gray');
+			filters.toggleClass('is-show');
+			universities.toggleClass('is-show');
+		});
+	}());
+
 });
