@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-pdomjf');
-	src:url('fonts/icomoon.eot?#iefix-pdomjf') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?-pdomjf') format('truetype'),
-		url('fonts/icomoon.woff?-pdomjf') format('woff'),
-		url('fonts/icomoon.svg?-pdomjf#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?hvj02w');
+	src:url('fonts/icomoon.eot?#iefixhvj02w') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?hvj02w') format('truetype'),
+		url('fonts/icomoon.woff?hvj02w') format('woff'),
+		url('fonts/icomoon.svg?hvj02w#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,54 +23,189 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-age:before {
+	content: "\e600";
+}
+.icon-arrow-down:before {
+	content: "\e601";
+}
 .icon-arrow-left:before {
-	content: "\e607";
+	content: "\e602";
 }
 .icon-arrow-right:before {
-	content: "\e60b";
+	content: "\e603";
 }
-.icon-study-nature:before {
+.icon-arrow-up:before {
+	content: "\e604";
+}
+.icon-average:before {
+	content: "\e605";
+}
+.icon-bag:before {
 	content: "\e606";
 }
 .icon-book:before {
-	content: "\e600";
+	content: "\e607";
 }
-.icon-checkbox:before {
-	content: "\e601";
-}
-.icon-contact:before {
-	content: "\e602";
-}
-.icon-del:before {
-	content: "\e603";
-}
-.icon-dollar:before {
-	content: "\e604";
-}
-.icon-fb:before {
-	content: "\e605";
-}
-.icon-point:before {
+.icon-boy:before {
 	content: "\e608";
 }
-.icon-rank:before {
+.icon-campus-windows:before {
 	content: "\e609";
 }
-.icon-search:before {
+.icon-campus:before {
 	content: "\e60a";
 }
-.icon-study-art:before {
+.icon-check:before {
+	content: "\e60b";
+}
+.icon-checkbox:before {
+	content: "\e60c";
+}
+.icon-close:before {
 	content: "\e60d";
 }
-.icon-study-business:before {
+.icon-comments:before {
 	content: "\e60e";
 }
-.icon-study-education:before {
+.icon-contact:before {
 	content: "\e60f";
 }
-.icon-study-health:before {
+.icon-date-end:before {
 	content: "\e610";
 }
-.icon-study-tech:before {
+.icon-date-first:before {
 	content: "\e611";
+}
+.icon-date-start:before {
+	content: "\e612";
+}
+.icon-del:before {
+	content: "\e613";
+}
+.icon-desk:before {
+	content: "\e614";
+}
+.icon-dollar:before {
+	content: "\e615";
+}
+.icon-fb:before {
+	content: "\e616";
+}
+.icon-fees:before {
+	content: "\e617";
+}
+.icon-girl:before {
+	content: "\e618";
+}
+.icon-laptop:before {
+	content: "\e619";
+}
+.icon-library:before {
+	content: "\e61a";
+}
+.icon-marker:before {
+	content: "\e61b";
+}
+.icon-menu-campus:before {
+	content: "\e61c";
+}
+.icon-menu-contact:before {
+	content: "\e61d";
+}
+.icon-menu-degree:before {
+	content: "\e61e";
+}
+.icon-menu-international:before {
+	content: "\e61f";
+}
+.icon-menu-introduce:before {
+	content: "\e620";
+}
+.icon-menu-prospects:before {
+	content: "\e621";
+}
+.icon-menu-quality:before {
+	content: "\e622";
+}
+.icon-menu:before {
+	content: "\e623";
+}
+.icon-mozaik:before {
+	content: "\e624";
+}
+.icon-ok:before {
+	content: "\e625";
+}
+.icon-pen:before {
+	content: "\e626";
+}
+.icon-people:before {
+	content: "\e627";
+}
+.icon-point:before {
+	content: "\e628";
+}
+.icon-rank:before {
+	content: "\e629";
+}
+.icon-search:before {
+	content: "\e62a";
+}
+.icon-size:before {
+	content: "\e62b";
+}
+.icon-smile:before {
+	content: "\e62c";
+}
+.icon-star-box:before {
+	content: "\e62d";
+}
+.icon-star-round:before {
+	content: "\e62e";
+}
+.icon-study-art:before {
+	content: "\e62f";
+}
+.icon-study-business:before {
+	content: "\e630";
+}
+.icon-study-education:before {
+	content: "\e631";
+}
+.icon-study-health:before {
+	content: "\e632";
+}
+.icon-study-it:before {
+	content: "\e633";
+}
+.icon-study-math:before {
+	content: "\e634";
+}
+.icon-study-nature:before {
+	content: "\e635";
+}
+.icon-study-other:before {
+	content: "\e636";
+}
+.icon-study-social:before {
+	content: "\e637";
+}
+.icon-study-tech:before {
+	content: "\e638";
+}
+.icon-tick:before {
+	content: "\e639";
+}
+.icon-time:before {
+	content: "\e63a";
+}
+.icon-union:before {
+	content: "\e63b";
+}
+.icon-wallet:before {
+	content: "\e63c";
+}
+.icon-world:before {
+	content: "\e63d";
 }

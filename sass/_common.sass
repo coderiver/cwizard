@@ -63,6 +63,7 @@ $orange: #fd8e26
 
 body
 	min-width: 320px
+	background: #EDEDED 
 	+f
 	font-size: 14px
 	line-height: 1.3
@@ -240,7 +241,8 @@ button
 				right: 0
 				bottom: -3px
 				height: 3px
-				background: rgba(#999A9F,.5)
+				background: rgba(0,0,0,.15)
+				box-shadow: 0 1px 0 rgba(0,0,0,.15) inset
 	.section__bg,
 	.section__wrap
 		position: absolute
@@ -454,7 +456,22 @@ button
 		background: #b7b8bc
 		+r(760)
 			top: 50px
+	.steps__head
+		position: relative
+		z-index: 4 
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			right: 0
+			bottom: -3px
+			height: 3px
+			background: rgba(0,0,0,.15)
+			box-shadow: 0 1px 0 rgba(0,0,0,.15) inset
 	.steps__head_info
+		&.is-active
+			&:after
+				display: none
 		.steps__head-in
 			+r(760)
 				display: none
@@ -514,6 +531,16 @@ button
 		height: 70px
 		padding: 14px 20px
 		font-size: 0
+		z-index: 4
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			right: 0
+			top: -3px
+			height: 3px
+			background: rgba(0,0,0,.15)
+			box-shadow: 0 -1px 0 rgba(0,0,0,.15) inset 
 		+r(760)
 			height: 60px
 			padding: 11px 30px
@@ -571,21 +598,16 @@ button
 		left: 0
 		right: 0
 		bottom: 70px
-		padding-left: 20px
-		border: 1px solid #999A9F
-		border-width: 1px 0
 		+scroll
+		z-index: 2 
 		+r(760)
 			top: 50px
 			bottom: 60px
 	.steps__content_universities
 		+r(760)
-			padding: 0
 			background: #ebebeb
 		&.is-gray
 			+r(760)
-				padding: 0 0 20px 20px
-				border-top-color: #CECFD3
 				background: #CECFD3 
 	.steps__filters
 		+r(760)
@@ -596,18 +618,13 @@ button
 
 .checkbox
 	display: block
-	padding: 19px 10px 14px 0
-	border-top: 1px solid #c5c6c9 
-	border-bottom: 1px solid #999A9F
+	padding: 19px 10px 14px 20px
+	box-shadow: 20px 1px 0 #999a9f, 20px 2px 0 #c5c6c9
 	+nosel
 	cursor: pointer
 	&:hover
 		.checkbox__el
 			border-color: #737378
-	&:first-child
-		border-top: none
-	&:last-child
-		border-bottom: none 
 	.checkbox__input
 		display: none
 		&:checked + .checkbox__in
@@ -663,11 +680,10 @@ button
 			color: $cl 
 
 .range
-	padding: 25px 20px 25px 0
-	border-bottom: 1px solid #999A9F
-	box-shadow: 0 1px 0 #c5c6c9
+	padding: 25px 20px
+	box-shadow: 20px 1px 0 #999a9f, 20px 2px 0 #c5c6c9
 	+r(760)
-		box-shadow: 0 1px 0 #d8d9dc
+		box-shadow: 20px 1px 0 #999a9f, 20px 2px 0 #d8d9dc
 	.range__title
 		margin-bottom: 3px
 		+fb
@@ -711,9 +727,8 @@ button
 		padding: 20px 20px 10px
 	&.selected_mobile
 		display: none
-		padding: 20px 0 10px
-		border-bottom: 1px solid #999A9F
-		box-shadow: 0 1px 0 #d8d9dc
+		padding: 20px 0 10px 20px
+		box-shadow: 20px 1px 0 #999a9f, 20px 2px 0 #d8d9dc
 		+r(760)
 			display: block
 	.selected__title
@@ -803,6 +818,7 @@ button
 		border-radius: 50%
 		background: #FFF
 		+vertical
+		overflow: hidden
 		img
 			max-width: 100%
 			max-height: 100%
@@ -895,12 +911,103 @@ button
 	background-color: #B7B8BC
 	box-shadow: 0 0 7px #C2C9CE
 	overflow: auto
-	z-index: 2 
+	z-index: 2
+	.menu__link
+		display: table
+		width: 100%
+		padding-left: 30px
+		box-shadow: 30px 1px 0 #999a9f, 30px 2px 0 #c5c6c9
+		color: $cl
+		+tr(background .2s)
+		&:hover,
+		&.is-active
+			box-shadow: none
+		&:hover
+			background: #D0D1D3 
+		&.is-active
+			background: #ededed
+			cursor: default  
+	.menu__icon,
+	.menu__title
+		display: table-cell
+		height: 70px
+		vertical-align: middle
+	.menu__icon
+		width: 45px
+		padding-right: 15px
+		text-align: center
+		font-size: 0
+		.icon
+			font-size: 30px
+	.menu__title
+		+fb
+		font-size: 16px
+		line-height: 1.2
 
+.chapter
+	background: #FFF
+	box-shadow: 0 1px 3px #C2C9CE
+	.chapter__body
+		padding: 50px
 
-
-
-
+.info
+	+cover
+	color: #FFF 
+	.info__wrap
+		padding: 40px 30px
+		+g(rgba(#000,.5), rgba(#000,.7))
+	.info__logo
+		float: left
+		width: 175px
+		height: 175px
+		padding: 10px
+		background: #FFF
+		border-radius: 50%
+		+vertical
+		overflow: hidden
+		img
+			max-width: 100%
+			max-height: 100%
+			vertical-align: middle
+	.info__in
+		margin-left: 210px
+	.info__title
+		margin-bottom: 5px
+		+fbl
+		font-size: 48px
+		line-height: 1
+		letter-spacing: -1px
+	.info__address
+		margin-bottom: 40px
+		font-size: 18px
+	.info__address-icon
+		float: left
+		margin-right: 10px
+	.info__address-in
+		overflow: hidden
+	.info__details
+		display: table
+		width: 100%
+		font-size: 0
+	.info__details-item,
+	.info__details-icon,
+	.info__details-in
+		display: table-cell
+		vertical-align: middle
+	.info__details-item
+		padding-left: 20px
+		&:first-child
+			padding: 0
+	.info__details-icon
+		padding-right: 10px
+		.icon
+			font-size: 35px
+			color: $orange
+	.info__details-in
+		font-size: 16px
+	.info__details-title
+		+fbl
+	
 
 
 
