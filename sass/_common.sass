@@ -56,6 +56,9 @@
 +font(Gotham Black, GothamBlack)
 =fbl
 	font-family: "Gotham Black", Arial, sans-serif
++font(Kalam Regular, kalam-regular)
+=fk
+	font-family: "Kalam Regular", Arial, sans-serif
 
 $cl: #23232c
 $gray: #424242
@@ -69,7 +72,6 @@ body
 	line-height: 1.3
 	color: $cl
 	font-smoothing: antialiased
-	overflow: hidden
 a
 	text-decoration: none
 input,
@@ -901,6 +903,9 @@ button
 
 .page
 	padding: 80px 320px 20px 20px
+	.page__center
+		max-width: 940px
+		margin: 0 auto	
 
 .menu
 	position: fixed
@@ -945,10 +950,29 @@ button
 		line-height: 1.2
 
 .chapter
+	margin-bottom: 20px
 	background: #FFF
 	box-shadow: 0 1px 3px #C2C9CE
+	.chapter__head
+		position: relative
+		padding: 20px 50px
+		background: #F7F7F5
+		box-shadow: 0 1px 3px #C2C9CE
+		z-index: 4 
 	.chapter__body
 		padding: 50px
+	.chapter__body_sm
+		padding: 40px 50px
+	.chapter__title
+		+fbl
+		font-size: 28px
+	.chapter__text
+		color: #61666C
+	.chapter__pic
+		margin-bottom: 40px 
+		img
+			display: block
+			width: 100%
 
 .info
 	+cover
@@ -1008,18 +1032,205 @@ button
 	.info__details-title
 		+fbl
 	
+.l
+	+clr
 
+.col
+	float: left
+	width: 50%
+	padding-left: 25px
+	&:first-child
+		padding: 0 25px 0 0
 
+.text
+	font-size: 16px
+	color: #7A7A86
+	line-height: 1.8
+	p
+		margin-bottom: 10px
+	a
+		+fb
+		color: #36B15C 
 
+.stats
+	.stats__item
+		display: table
+		width: 100%
+		margin-bottom: 30px
+		padding: 10px
+		background: #B7B8BC
+	.stats__item_orange
+		background: $orange
+		color: #FFF  
+	.stats__icon,
+	.stats__value,
+	.stats__title
+		display: table-cell
+		vertical-align: middle
+	.stats__icon,
+	.stats__value
+		padding-right: 10px
+	.stats__icon
+		font-size: 0
+		.icon
+			font-size: 65px
+	.stats__value
+		white-space: nowrap
+		padding-top: 7px
+	.stats__value-number,
+	.stats__value-type
+		display: inline-block
+	.stats__value-number
+		max-width: 105px 
+		+fbl
+		font-size: 90px
+		line-height: 1
+		letter-spacing: -5px 
+	.stats__value-type
+		+fb
+		font-size: 30px
+	.stats__title
+		+fbl
+		font-size: 22px
+		text-transform: uppercase
+		line-height: 1.1
 
+.tabs
+	.tabs__nav
+		font-size: 0
+	.tabs__btn
+		width: 50%
+		height: 100px
+		background: #F7F7F5 
+		vertical-align: top
+		+fbl
+		font-size: 24px
+		&.is-active
+			background: #fff 
 
+.studies
+	display: flex
+	padding: 10px
+	font-size: 0
+	flex-wrap: wrap
+	.studies__item
+		display: inline-block
+		width: 25%
+		margin-bottom: 10px
+		padding: 25px 25px 15px
+		border: 3px solid transparent
+		+tr(border-color .2s)
+		vertical-align: top
+		text-align: center
+		&:hover
+			border-color: $orange
+	.studies__icon
+		height: 44px
+		margin-bottom: 10px
+		+vertical
+		.icon
+			font-size: 38px
+			color: #B7B8BC
+		.icon-study-other
+			font-size: 12px 
+	.studies__title
+		+fbl
+		font-size: 18px
+		color: $cl
+	.studies__text
+		font-size: 14px
+		color: #61666C 
 
-
-
-
-
-
-
+.responses
+	.responses__title
+		margin-bottom: 15px
+		padding: 0 50px
+		+fk
+		font-size: 28px
+	.responses__row
+		display: table
+		width: 100%
+		height: 100px
+		padding: 0 15px 
+		table-layout: fixed
+	.responses__cell
+		display: table-cell
+		padding: 0 15px 
+		vertical-align: top
+		&:first-child,
+		&:last-child
+			.responses__item
+				background: $orange
+				color: #FFF
+				&:after
+					border-color: $orange transparent transparent transparent
+		&:first-child
+			.responses__item
+				&:after
+					margin-left: -35px
+					border-width: 0 15px 15px 0
+					border-color: transparent $orange transparent transparent
+		&:last-child
+			.responses__text-big
+				letter-spacing: 4px 
+	.responses__item
+		position: relative
+		padding: 15px 10px 10px
+		background: #b7b8bc
+		text-align: center
+		&:after
+			content: ""
+			position: absolute
+			bottom: -15px
+			left: 50%
+			margin-left: 60px
+			+arr(15,15,#b7b8bc,tl)
+	.responses__head
+		max-height: 62px
+		font-size: 0
+	.responses__icon,
+	.responses__value
+		display: inline-block
+		vertical-align: top
+	.responses__icon
+		margin-right: 13px
+		.icon
+			font-size: 54px
+	.responses__value
+		line-height: 1
+	.responses__value-number,
+	.responses__value-type
+		display: inline-block
+		+fbl
+	.responses__value-number
+		font-size: 72px
+	.responses__value-type
+		font-size: 40px
+	.responses__text-small 
+		+fb
+		font-size: 23px
+	.responses__text-big
+		+fbl	
+		font-size: 22px
+		text-transform: uppercase
+	.responses__bg
+		height: 100px
+		margin-top: 20px
+		font-size: 0
+		text-align: center
+		overflow: hidden
+	.responses__bg-item
+		display: inline-block
+		width: 20%
+		vertical-align: top
+		color: #F4F4F4
+		&:nth-child(2),
+		&:nth-child(4)
+			color: #B7B8BC
+		&:nth-child(3)
+			color: $orange 
+		.icon
+			font-size: 125px
 
 
 
