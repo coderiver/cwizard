@@ -344,6 +344,7 @@ button
 	padding: 0 10px
 	border: 2px solid #E5EBEB
 	+placeholder-color(#b5bebf)
+	+tr(border-color .2s)
 	&.input_area
 		height: 70px
 		padding: 12px 10px
@@ -353,9 +354,8 @@ button
 .search
 	position: relative
 	.search__input
-		padding-right: 40px
 		height: 34px
-		padding: 0 10px
+		padding-right: 40px
 		border-width: 1px
 		+placeholder-color(rgba($gray,.7))
 	.search__btn
@@ -912,9 +912,15 @@ button
 
 .page
 	padding: 80px 320px 20px 20px
+	+r(1340)
+		padding-right: 100px
+	+r(1020)
+		padding-top: 70px
 	.page__center
 		max-width: 940px
-		margin: 0 auto	
+		margin: 0 auto
+		+r(1020)
+			max-width: 648px
 
 .menu
 	position: fixed
@@ -926,6 +932,10 @@ button
 	box-shadow: 0 0 7px #C2C9CE
 	overflow: auto
 	z-index: 2
+	+r(1340)
+		width: 80px
+	+r(1020)
+		top: 50px
 	.menu__link
 		display: table
 		width: 100%
@@ -933,6 +943,9 @@ button
 		box-shadow: 30px 1px 0 #999a9f, 30px 2px 0 #c5c6c9
 		color: $cl
 		+tr(background .2s)
+		+r(1340)
+			padding-left: 8px
+			box-shadow: 8px 1px 0 #999a9f, 8px 2px 0 #c5c6c9
 		&:hover,
 		&.is-active
 			box-shadow: none
@@ -951,12 +964,16 @@ button
 		padding-right: 15px
 		text-align: center
 		font-size: 0
+		+r(1340)
+			padding-right: 8px
 		.icon
 			font-size: 30px
 	.menu__title
 		+fb
 		font-size: 16px
 		line-height: 1.2
+		+r(1340)
+			display: none
 
 .chapter
 	margin-bottom: 20px
@@ -970,10 +987,14 @@ button
 		z-index: 4 
 	.chapter__body
 		padding: 50px
+		+r(1020)
+			padding: 45px 50px
 	.chapter__body_sm
 		padding: 40px 50px
 	.chapter__body_bg
 		background: url(../img/bg-man.jpg) no-repeat 5% 100%
+		+r(1020)
+			background: none 
 	.chapter__title
 		+fbl
 		font-size: 28px
@@ -987,10 +1008,12 @@ button
 
 .info
 	+cover
-	color: #FFF 
+	color: #FFF
 	.info__wrap
 		padding: 40px 30px
 		+g(rgba(#000,.5), rgba(#000,.7))
+		+r(1020)
+			padding: 20px 20px 40px 50px
 	.info__logo
 		float: left
 		width: 175px
@@ -1000,20 +1023,27 @@ button
 		border-radius: 50%
 		+vertical
 		overflow: hidden
+		+r(1020)
+			width: 122px
+			height: 122px
 		img
 			max-width: 100%
 			max-height: 100%
 			vertical-align: middle
 	.info__in
-		margin-left: 210px
+		margin: 0 0 40px 210px
+		+r(1020)
+			margin-left: 150px
+			padding-top: 30px
 	.info__title
 		margin-bottom: 5px
 		+fbl
 		font-size: 48px
 		line-height: 1
 		letter-spacing: -1px
+		+r(1020)
+			font-size: 36px
 	.info__address
-		margin-bottom: 40px
 		font-size: 18px
 	.info__address-icon
 		float: left
@@ -1021,9 +1051,10 @@ button
 	.info__address-in
 		overflow: hidden
 	.info__details
-		display: table
-		width: 100%
+		margin-left: 210px
 		font-size: 0
+		+r(1020)
+			margin: 0
 	.info__details-item,
 	.info__details-icon,
 	.info__details-in
@@ -1038,6 +1069,8 @@ button
 		.icon
 			font-size: 35px
 			color: $orange
+			+r(1020)
+				font-size: 25px
 	.info__details-in
 		font-size: 16px
 	.info__details-title
@@ -1054,8 +1087,14 @@ button
 	float: left
 	width: 50%
 	padding-left: 25px
+	+r(1020)
+		width: 100%
+		padding: 0
 	&:first-child
 		padding: 0 25px 0 0
+		+r(1020)
+			margin-bottom: 40px
+			padding: 0
 
 .text
 	font-size: 16px
@@ -1068,12 +1107,17 @@ button
 		color: #36B15C 
 
 .stats
+	+r(1020)
+		max-width: 365px
 	.stats__item
 		display: table
 		width: 100%
-		margin-bottom: 30px
 		padding: 23px 10px
 		background: #B7B8BC
+		+r(1340)
+			padding: 23px 20px
+		& + .stats__item
+			margin-top: 30px
 	.stats__item_orange
 		background: $orange
 		color: #FFF  
@@ -1088,28 +1132,36 @@ button
 	.stats__icon
 		font-size: 0
 		.icon
-			font-size: 65px
+			font-size: 64px
+			+r(1340)
+				font-size: 52px
 	.stats__value
 		white-space: nowrap
 	.stats__value-number,
 	.stats__value-type
 		display: inline-block
+		line-height: 1
 	.stats__value-number
 		max-width: 105px
-		height: 80px
+		height: 74px
 		+fbl
-		font-size: 90px
-		line-height: 1
-		letter-spacing: -5px 
+		font-size: 84px
+		letter-spacing: -5px
+		+r(1340)
+			height: 60px
+			font-size: 70px
 	.stats__value-type
 		+fb
 		font-size: 30px
 	.stats__title
 		padding-top: 2px
 		+fbl
-		font-size: 22px
+		font-size: 20px
 		text-transform: uppercase
 		line-height: 1.1
+		+r(1340)
+			padding-top: 4px
+			font-size: 18px
 
 .tabs
 	.tabs__nav
@@ -1117,6 +1169,7 @@ button
 	.tabs__btn
 		width: 50%
 		height: 100px
+		padding: 0 50px
 		background: #F7F7F5 
 		vertical-align: top
 		+fbl
@@ -1138,6 +1191,8 @@ button
 		+tr(border-color .2s)
 		vertical-align: top
 		text-align: center
+		+r(1020)
+			width: 50%
 		&:hover
 			border-color: $orange
 	.studies__icon
@@ -1164,15 +1219,18 @@ button
 		+fk
 		font-size: 28px
 	.responses__row
-		display: table
-		width: 100%
-		height: 100px
 		padding: 0 15px 
-		table-layout: fixed
-	.responses__cell
-		display: table-cell
+		font-size: 0
+		+r(1020)
+			padding: 0
+	.responses__col
+		display: inline-block
+		width: 33.33%
 		padding: 0 15px 
 		vertical-align: top
+		+r(1020)
+			width: 50%
+			padding: 0 25px 50px
 		&:first-child,
 		&:last-child
 			.responses__item
@@ -1186,9 +1244,26 @@ button
 					margin-left: -35px
 					border-width: 0 15px 15px 0
 					border-color: transparent $orange transparent transparent
+			.responces__bg-item
+				color: #b7b8bc
+				&:first-child
+					color: #F4F4F4
+		&:nth-child(2)
+			.responses__bg-item
+				color: $orange
+				&:first-child
+					color: #F4F4F4
 		&:last-child
 			.responses__text-big
-				letter-spacing: 4px 
+				letter-spacing: 4px
+			.responses__bg-item
+				color: #F4F4F4
+				&:first-child
+					color: #b7b8bc
+		.responses__bg
+			display: none
+			+r(1020)
+				display: block
 	.responses__item
 		position: relative
 		padding: 15px 10px 10px
@@ -1236,11 +1311,16 @@ button
 		font-size: 0
 		text-align: center
 		overflow: hidden
+		+r(1020)
+			display: none
+			height: auto
 	.responses__bg-item
 		display: inline-block
 		width: 20%
 		vertical-align: top
 		color: #F4F4F4
+		+r(1020)
+			width: 50%
 		&:nth-child(2),
 		&:nth-child(4)
 			color: #B7B8BC
@@ -1250,6 +1330,7 @@ button
 			font-size: 125px
 
 .respond
+	max-width: 390px
 	.respond__title
 		margin-bottom: 15px
 		+fk
@@ -1305,22 +1386,31 @@ button
 .join
 	padding: 32px 50px
 	background: #E8F5EE
+	+r(1020)
+		padding: 40px 50px 50px 
 	.join__cell
 		display: table-cell
 		vertical-align: middle
+		+r(1020)
+			display: block
 	.join__title
 		position: relative
 		+fk
 		font-size: 38px
 		letter-spacing: -1px
+		+r(1020)
+			margin-bottom: 15px
 		span
+			display: block
 			color: #209D5C
 		.icon
 			position: absolute
 			right: -22px
 			bottom: -11px
 			font-size: 17px
-			color: #209D5C  
+			color: #209D5C
+			+r(1020)
+				display: none 
 	.join__btn
 		white-space: nowrap
 		letter-spacing: 1.5px  
@@ -1333,8 +1423,14 @@ button
 	font-size: 32px
 	color: #FFF
 	text-transform: uppercase
-	&.btn_wide
-		width: 100%
+	+transition(background .2s, box-shadow .2s)
+	&:hover
+		background: #23a15c
+	&:active
+		background: #126f3c
+		box-shadow: 0 20px 20px -20px rgba(#000,.2) inset
+	&.btn_wide_max
+		max-width: 100%
 
 .salary
 	.salary__title
@@ -1344,6 +1440,10 @@ button
 	.salary__item
 		margin-top: 10px
 		color: #7A7A86
+		+clr
+	.salary__icon,
+	.salary__data
+		float: left
 	.salary__icon
 		font-size: 0
 		color: #B7B8BC
@@ -1351,11 +1451,10 @@ button
 		.icon
 			float: right
 			font-size: 37px
-	.salary__item
-		display: table
 	.salary__data
-		float: right
-		padding: 3px 0 0 13px
+		padding: 7px 0 0 13px
+		white-space: nowrap
+		line-height: 1
 		span
 			margin-right: 5px
 			+fbl
@@ -1376,11 +1475,89 @@ button
 	box-shadow: 0 7px 15px rgba(194, 201, 206, 0.7)
 	.form__field
 		margin-bottom: 24px
+	.form__btn
+		width: 100%
+		+r(1020)
+			display: block
+			width: auto
+			margin: 0 auto 
 
-
-
-
-
+.course
+	border-top: 1px solid #f0f0f0
+	.course__head
+		padding: 20px 30px 30px
+		+clr
+	.course__head-menu
+		float: left
+		margin: 9px 30px 0 0
+		font-size: 32px
+		color: #BDBDBF 
+	.course__head-icon
+		float: left
+		width: 50px
+		height: 50px
+		margin-right: 15px
+		background: $orange
+		border-radius: 50%
+		color: #fff  
+		+vertical
+		.icon
+			font-size: 28px
+			vertical-align: middle
+	.course__head-info
+		display: table
+		padding-top: 5px
+	.course__head-title
+		+fbl
+		font-size: 18px
+	.course__head-counter
+		color: #61666C
+	.course__container
+		position: relative
+		padding-left: 90px
+		background: #F7F7F5 
+		box-shadow: inset 0 1px 10px #E3E3E3
+		z-index: 2
+	.course__container-arr
+		position: absolute
+		top: -10px
+		left: 107px
+		height: 16px
+		overflow: hidden
+		&:before
+			content: ""
+			display: block
+			width: 20px
+			height: 20px
+			margin-top: 5px
+			+rotate(45)
+			background: #F7F7F5 
+			box-shadow: inset 0 1px 10px #E3E3E3
+	.course__item
+		&.is-active
+			.course__item-arr
+				margin-top: 6px
+				.icon
+					+rotate(180)
+	.course__item-head
+		padding: 25px 30px 22px 0
+		box-shadow: 0px 1px 0 0 #ececeb inset
+		cursor: pointer
+		+clr
+	.course__item-arr
+		float: left
+		margin: 8px 17px 0 0
+		font-size: 9px
+		color: #B7B8BC
+		.icon
+			display: inline-block
+	.course__item-title
+		display: table
+		+fb
+		font-size: 18px
+		letter-spacing: -.2px 
+		
+		
 
 
 
