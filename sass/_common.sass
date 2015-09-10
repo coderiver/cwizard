@@ -916,11 +916,15 @@ button
 		padding-right: 100px
 	+r(1020)
 		padding-top: 70px
+	+r(760)
+		padding: 50px 0 0 0
 	.page__center
 		max-width: 940px
 		margin: 0 auto
 		+r(1020)
 			max-width: 648px
+		+r(760)
+			max-width: 100%
 
 .menu
 	position: fixed
@@ -936,6 +940,8 @@ button
 		width: 80px
 	+r(1020)
 		top: 50px
+	+r(760)
+		display: none
 	.menu__link
 		display: table
 		width: 100%
@@ -979,22 +985,66 @@ button
 	margin-bottom: 20px
 	background: #FFF
 	box-shadow: 0 1px 3px #C2C9CE
+	&.chapter_form
+		.chapter__head
+			background: #e8f5ee
+			box-shadow: none 
+		.chapter__body
+			background: url(../img/bg-man.jpg) no-repeat 5% 100%
+			+r(1020)
+				background: none
+	&.chapter_form_sm
+		margin: 0
+		box-shadow: none
+		.chapter__head
+			padding: 20px 30px 20px 40px
+			background: #bfe1cf
+			box-shadow: none 
+		.chapter__body
+			display: none
+			position: relative
+			padding: 30px 30px 30px 40px
+			background: url(../img/bg-man.jpg) no-repeat -5% 100%
+			z-index: 6 
+			+r(1020)
+				background: none
+			&:before
+				content: ""
+				position: absolute
+				top: -8px 
+				right: 160px
+				+arr(16,8,#fff,t)
+				+r(1020)
+					right: 50%
+					margin-right: -8px
+		.chapter__title
+			font-size: 20px
 	.chapter__head
 		position: relative
+		display: table
+		width: 100%
 		padding: 20px 50px
 		background: #F7F7F5
 		box-shadow: 0 1px 3px #C2C9CE
-		z-index: 4 
+		z-index: 4
+	.chapter__cell
+		display: table-cell
+		vertical-align: middle
+		+r(1020)
+			display: block
+		&:last-child
+			padding-left: 20px
+			+r(1020)
+				padding: 20px 0 0 0
+				text-align: center
+	.chapter__cell-btn
+		min-width: 280px
 	.chapter__body
 		padding: 50px
 		+r(1020)
 			padding: 45px 50px
 	.chapter__body_sm
 		padding: 40px 50px
-	.chapter__body_bg
-		background: url(../img/bg-man.jpg) no-repeat 5% 100%
-		+r(1020)
-			background: none 
 	.chapter__title
 		+fbl
 		font-size: 28px
@@ -1014,6 +1064,8 @@ button
 		+g(rgba(#000,.5), rgba(#000,.7))
 		+r(1020)
 			padding: 20px 20px 40px 50px
+		+r(760)
+			padding: 20px
 	.info__logo
 		float: left
 		width: 175px
@@ -1095,11 +1147,20 @@ button
 		+r(1020)
 			margin-bottom: 40px
 			padding: 0
+	&.col_40
+		width: 40%
+		+r(1020)
+			width: 100%
+	&.col_60
+		width: 60%
+		+r(1020)
+			width: 100%
 
 .text
 	font-size: 16px
 	color: #7A7A86
 	line-height: 1.8
+	letter-spacing: -.2px 
 	p
 		margin-bottom: 10px
 	a
@@ -1169,11 +1230,13 @@ button
 	.tabs__btn
 		width: 50%
 		height: 100px
-		padding: 0 50px
+		padding: 0 120px
 		background: #F7F7F5 
 		vertical-align: top
 		+fbl
 		font-size: 24px
+		+r(1020)
+			padding: 0 50px
 		&.is-active
 			background: #fff 
 
@@ -1401,8 +1464,9 @@ button
 		+r(1020)
 			margin-bottom: 15px
 		span
-			display: block
 			color: #209D5C
+			+r(1020)
+				display: block
 		.icon
 			position: absolute
 			right: -22px
@@ -1431,6 +1495,9 @@ button
 		box-shadow: 0 20px 20px -20px rgba(#000,.2) inset
 	&.btn_wide_max
 		max-width: 100%
+	&.btn_sm
+		height: 53px
+		font-size: 24px
 
 .salary
 	.salary__title
@@ -1471,6 +1538,7 @@ button
 
 .form
 	padding: 24px 27px 28px
+	background: #FFF 
 	border: 3px solid #209D5C
 	box-shadow: 0 7px 15px rgba(194, 201, 206, 0.7)
 	.form__field
@@ -1513,12 +1581,11 @@ button
 	.course__head-counter
 		color: #61666C
 	.course__container
+		display: none
 		position: relative
-		padding-left: 90px
-		background: #F7F7F5 
 		box-shadow: inset 0 1px 10px #E3E3E3
 		z-index: 2
-	.course__container-arr
+	.course__arr
 		position: absolute
 		top: -10px
 		left: 107px
@@ -1539,11 +1606,29 @@ button
 				margin-top: 6px
 				.icon
 					+rotate(180)
+			.course__item-head
+				&:before
+					display: none
+		.course__arr
+			left: 127px
+			&:before
+				background: #EFEFEB 
 	.course__item-head
-		padding: 25px 30px 22px 0
-		box-shadow: 0px 1px 0 0 #ececeb inset
+		position: relative
+		padding: 25px 30px 22px 90px
+		background: #f7f7f5
 		cursor: pointer
 		+clr
+		+r(1020)
+			padding-left: 60px
+		&:before
+			content: ""
+			position: absolute
+			left: 90px
+			bottom: 0
+			right: 0
+			height: 1px
+			background: #ececeb 
 	.course__item-arr
 		float: left
 		margin: 8px 17px 0 0
@@ -1555,9 +1640,63 @@ button
 		display: table
 		+fb
 		font-size: 18px
-		letter-spacing: -.2px 
+		letter-spacing: -.2px
+	.course__item-body
+		display: none
+		position: relative
+		padding: 30px 45px 30px 120px
+		background: #EFEFEB
+		box-shadow: inset 0 1px 10px #E3E3E3
+		+r(1020)
+			padding-left: 90px
 		
-		
+.inform
+	margin-bottom: 10px
+	.inform__title
+		margin-bottom: 25px
+		+fb
+		font-size: 16px
+		color: #61666c 
+	.inform__list
+		font-size: 0
+	.inform__item
+		display: inline-block
+		width: 25%
+		margin-bottom: 15px
+		padding-right: 20px
+		vertical-align: top
+		+r(1020)
+			width: 50%
+	.inform__item_w33
+		width: 33.33%
+		+r(1020)
+			width: 50%
+	.inform__head
+		margin-bottom: 5px
+		line-height: 1
+	.inform__icon,
+	.inform__type
+		display: inline-block
+		vertical-align: middle
+	.inform__icon
+		padding-right: 10px
+		font-size: 0
+		.icon
+			font-size: 27px 
+			color: #B7B8BC 
+	.inform__type
+		height: 30px
+		font-size: 22px
+		color: $orange
+	.inform__bold
+		+fbl
+	.inform__value
+		+fbl
+		font-size: 36px
+	.inform__text
+		padding-right: 25px
+		font-size: 14px
+		line-height: 1.2
 
 
 
