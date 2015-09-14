@@ -595,6 +595,7 @@ button { background: transparent; }
 .btn.btn_wide_max { max-width: 100%; }
 .btn.btn_sm { height: 53px; font-size: 24px; }
 
+.salary { overflow: hidden; }
 .salary .salary__title { margin-bottom: 15px; font-family: "Gotham Black", Arial, sans-serif; font-size: 20px; }
 .salary .salary__item { margin-top: 10px; color: #7a7a86; *zoom: 1; }
 .salary .salary__item:after { content: " "; display: table; clear: both; }
