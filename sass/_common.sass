@@ -60,6 +60,17 @@
 =fk
 	font-family: "Kalam Regular", Arial, sans-serif
 
+=fi
+	font-family: 'icomoon'
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
 $cl: #23232c
 $gray: #424242
 $orange: #fd8e26
@@ -988,11 +999,14 @@ button
 	box-shadow: 0 1px 3px #C2C9CE
 	+r(760)
 		margin: 0
+		border-bottom: 1px solid #d3d3d5 
 		box-shadow: none
 	&.chapter_form
 		.chapter__head
 			background: #e8f5ee
 			box-shadow: none 
+			+r(760)
+				background: none
 		.chapter__body
 			background: url(../img/bg-man.jpg) no-repeat 5% 100%
 			+r(1020)
@@ -1014,6 +1028,9 @@ button
 			z-index: 6 
 			+r(1020)
 				background: none
+			+r(760)
+				padding: 25px 20px
+				box-shadow: none
 			&:before
 				content: ""
 				position: absolute
@@ -1032,7 +1049,30 @@ button
 		padding: 20px 50px
 		background: #F7F7F5
 		box-shadow: 0 1px 3px #C2C9CE
+		+clr
 		z-index: 4
+		+r(760)
+			padding: 25px 20px
+			background: none
+			box-shadow: none
+			& + .chapter__body
+				padding-top: 0
+	.chapter__head-arrow,
+	.chapter__head-icon
+		display: none
+		float: left
+		font-size: 0
+		+r(760)
+			display: block
+	.chapter__head-arrow
+		margin: 10px 15px 0 0
+		.icon
+			font-size: 8px 
+			color: #B7B8BC 
+	.chapter__head-icon
+		margin: 0 10px 0 0
+		.icon
+			font-size: 30px
 	.chapter__cell
 		display: table-cell
 		vertical-align: middle
@@ -1058,12 +1098,18 @@ button
 	.chapter__title
 		+fbl
 		font-size: 28px
+		+r(760)
+			display: table
+			padding-top: 6px
+			font-size: 16px
 	.chapter__text
 		color: #61666C
+		+r(760)
+			display: none
 	.chapter__pic
 		margin-bottom: 40px
 		+r(760)
-			margin: -20px -20px 20px
+			margin: 0 -20px 20px
 		img
 			display: block
 			width: 100%
@@ -1167,12 +1213,22 @@ button
 	
 .l
 	+clr
+	&.l_mb-40
+		margin-bottom: 40px
+		+r(760)
+			margin-bottom: 20px
 	&.l_border
 		margin-bottom: 40px
 		padding-bottom: 30px
-		border-bottom: 1px solid #eeeeee
 		+r(760)
 			margin-bottom: 20px
+	&.l_border_moved
+		margin: 0 -50px 45px 0
+		padding: 0 50px 45px 0
+		border-bottom: 1px solid #eeeeee
+		+r(760)
+			margin: 0 0 20px 0
+			padding: 0 0 20px 0
 
 .col
 	float: left
@@ -1196,6 +1252,31 @@ button
 		width: 60%
 		+r(1020)
 			width: 100%
+	&.col_r
+		&:first-child
+			+r(1020)
+				margin: 0
+				padding: 0 25px 0 0
+			+r(760)
+				padding: 0 10px 0 0
+		+r(1020)
+			width: 50%
+			padding-left: 25px
+			+r(760)
+				padding-left: 10px
+
+.title
+	margin-bottom: 40px
+	+fbl
+	font-size: 22px
+	+r(760)
+		margin-bottom: 20px
+
+.wrap-text
+	position: relative
+	overflow: hidden
+	.text
+		padding-bottom: 40px
 
 .text
 	font-size: 16px
@@ -1204,11 +1285,53 @@ button
 	letter-spacing: -.2px
 	+r(760)
 		font-size: 14px
+	h3
+		margin-bottom: 14px
+		+fk
+		font-size: 28px
+		font-weight: 400
+		line-height: 1.3
+		color: #12252B  
 	p
 		margin-bottom: 10px
+		& + h3
+			margin-top: 40px
+		& + img
+			margin-top: 40px
+	img
+		display: block
+		max-width: 100%
+		margin-bottom: 40px
+		+r(760)
+			margin: 20px 0
 	a
 		+fb
-		color: #36B15C 
+		color: #36B15C
+	blockquote
+		position: relative
+		margin-bottom: 20px
+		padding-left: 86px
+		&:before
+			content: "\e640"
+			position: absolute
+			top: 0
+			left: 0
+			+fi
+			font-size: 46px
+			color: $orange 
+
+.more
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	padding-top: 80px
+	+background-image(linear-gradient(rgba(#fff,0) 0%, rgba(#fff,1) 70%))
+	text-align: center
+	.more__link
+		border-bottom: 1px dotted
+		font-size: 16px
+		color: #7a7a86  
 
 .stats
 	+r(1020)
@@ -1230,7 +1353,30 @@ button
 				margin-top: 20px
 	.stats__item_orange
 		background: $orange
-		color: #FFF  
+		color: #FFF
+	.stats__item_big
+		.stats__icon
+			.icon
+				font-size: 62px
+		.stats__value-number
+			height: 78px
+			font-size: 90px
+		.stats__title
+			font-size: 20px
+	.stats__item_ratio
+		padding: 23px 37px
+		.stats__icon,
+		.stats__value
+			padding-right: 15px
+		.stats__icon
+			.icon
+				font-size: 64px
+		.stats__value-number
+			height: 78px
+			font-size: 90px
+		.stats__title
+			font-size: 24px
+			line-height: 1
 	.stats__icon,
 	.stats__value,
 	.stats__title
@@ -1270,6 +1416,10 @@ button
 		font-size: 30px
 		+r(760)
 			font-size: 25px
+	.stats__value-dots
+		margin: 0 5px
+		font-size: 60px
+		vertical-align: middle
 	.stats__title
 		padding-top: 2px
 		+fbl
@@ -1281,12 +1431,14 @@ button
 			font-size: 18px
 		+r(760)
 			font-size: 14px
+	.stats__lower
+		text-transform: none
 
 .tabs
 	.tabs__nav
 		font-size: 0
 		+r(760)
-			padding-left: 40px 
+			padding-left: 40px
 	.tabs__btn
 		width: 50%
 		height: 100px
@@ -1295,9 +1447,6 @@ button
 		vertical-align: top
 		+fbl
 		font-size: 24px
-		&:last-child
-			+r(760)
-				border: none
 		+r(1020)
 			padding: 0 50px
 		+r(760)
@@ -1305,7 +1454,7 @@ button
 			height: auto
 			min-height: 58px
 			padding: 10px 20px 10px 0
-			border-bottom: 1px solid #e8e8e9
+			border-top: 1px solid #e8e8e9
 			background: #fff 
 			font-size: 14px
 			text-align: left
@@ -1358,6 +1507,8 @@ button
 			text-align: left
 		&:hover
 			border-color: $orange
+			+r(760)
+				border-color: #e8e8e9
 	.studies__icon
 		height: 44px
 		margin-bottom: 10px
@@ -1396,6 +1547,8 @@ button
 
 .responses
 	+r(760)
+		width: 320px
+		margin: 0 auto
 		padding: 0 20px
 	.responses__title
 		margin-bottom: 15px
@@ -1420,7 +1573,7 @@ button
 			padding: 0 25px 50px
 		+r(760)
 			display: block
-			width: 280px
+			width: 100%
 			padding: 0 0 25px
 		&:first-child,
 		&:last-child
@@ -1676,14 +1829,31 @@ button
 
 .salary
 	overflow: hidden
+	+r(760)
+		margin-left: -20px
 	.salary__title
 		margin-bottom: 15px
 		+fbl
 		font-size: 20px
+		+r(760)
+			padding-left: 20px
 	.salary__item
 		margin-top: 10px
 		color: #7A7A86
 		+clr
+	.salary__item_sm
+		.salary__icon
+			width: 487px
+			+r(1020)
+				width: 183px
+			+r(760)
+				width: 47px
+	.salary__item_lg
+		.salary__icon
+			+r(1020)
+				width: 288px
+			+r(760)
+				width: 152px
 	.salary__icon,
 	.salary__data
 		float: left
@@ -1696,7 +1866,6 @@ button
 			font-size: 37px
 	.salary__data
 		padding: 7px 0 0 13px
-		white-space: nowrap
 		line-height: 1
 		span
 			margin-right: 5px
@@ -1704,6 +1873,8 @@ button
 			font-size: 28px
 			color: $orange
 			vertical-align: middle
+			+r(760)
+				display: block
 
 .field
 	.field__label
@@ -1910,16 +2081,205 @@ button
 		+r(760)
 			font-size: 11px
 
+.data
+	+fbl
+	font-size: 0
+	.data__item
+		display: inline-block
+		width: 25%
+		padding: 0 25px
+		vertical-align: top
+	.data__value
+		font-size: 50px
+		color: $orange
+		letter-spacing: -3px 
+		line-height: 1
+		+r(760)
+			font-size: 36px
+		span
+			font-size: 40px
+			+r(760)
+				font-size: 26px
+	.data__text
+		font-size: 18px
+		+r(760)
+			font-size: 14px
 
+.graph
+	&.graph_mb-40
+		margin-bottom: 40px
+		+r(760)
+			margin-bottom: 20px
+	.graph__title
+		margin-bottom: 20px
+		+fbl
+		font-size: 22px
+		+r(760)
+			font-size: 16px
+	.graph__in
+		+clr
+	.graph__el
+		float: left
+		width: 120px
+		margin-right: 12px
+		+r(1020)
+			margin-right: 40px
+		+r(760)
+			width: 80px
+			margin-right: 12px
+		img
+			display: block
+			max-width: 100%
+	.graph__list
+		margin-bottom: -38px
+		font-size: 0
+		overflow: hidden
+		+r(760)
+			margin-bottom: -15px
+	.graph__item
+		display: inline-block
+		width: 50%
+		margin-bottom: 38px
+		padding-right: 20px
+		vertical-align: top
+		+r(760)
+			margin-bottom: 15px
+			padding-right: 10px
+	.graph__value
+		+fbl
+		font-size: 24px
+		color: $orange
+		line-height: 1.2
+		+r(760)
+			font-size: 16px
+	.graph__country
+		font-size: 16px
+		color: #7A7A86
+		+r(760)
+			font-size: 12px
 
+.average
+	padding: 25px 20px 20px
+	background: #b7b8bc
+	+fbl
+	text-align: center
+	&.average_orange
+		background: $orange
+		color: #fff
+	.average__money
+		font-size: 71px
+		line-height: 1
+		letter-spacing: -5px
+		+r(760)
+			font-size: 50px
+			letter-spacing: -2px
+		span
+			font-size: 49px
+			+r(760)
+				font-size: 35px
+			&:first-child
+				font-size: 41px
+				+r(760)
+					font-size: 30px
+	.average__title
+		font-size: 26px
+		text-transform: uppercase
+		letter-spacing: 1.5px
+		+r(760)
+			font-size: 19px
+	.average__text
+		font-size: 18px
+		+r(760)
+			font-size: 14px
 
+.date
+	margin-bottom: 25px
+	padding: 25px 20px
+	background: #b7b8bc
+	+fbl
+	text-align: center
+	&.date_orange
+		background: $orange
+		color: #FFF
+	.date__head	
+		margin-bottom: 12px
+		font-size: 0
+	.date__icon,
+	.date__value
+		display: inline-block
+		vertical-align: middle
+	.date__icon
+		margin-right: 17px
+		.icon
+			font-size: 50px
+	.date__value
+		height: 60px
+		font-size: 70px
+		line-height: 1
+		letter-spacing: -2px 
+		span
+			position: relative
+			top: -2px
+			+f
+			font-size: 55px
+			vertical-align: middle
+	.date__title
+		font-size: 38px
+		letter-spacing: 8px
+		text-transform: uppercase
+		line-height: 1
+	.date__title_sm
+		font-size: 26px
+		letter-spacing: 1px 
+	.date__text
+		font-size: 18px
 
+.list
+	margin-bottom: 40px
+	.list__item
+		margin-bottom: 20px
+		+clr
+	.list__icon
+		float: left
+		margin-right: 15px
+		font-size: 0
+		color: #B7B8BC 
+		.icon
+			font-size: 24px 
+	.list__content
+		display: table
+		+fbl
+		font-size: 26px
+		color: $orange
+		text-transform: uppercase
+		line-height: 1.2
 
-
-
-
-
-
+.counter
+	padding: 25px 20px
+	background: #b7b8bc 
+	+fbl
+	text-align: center
+	line-height: 1
+	.counter__head
+		margin-bottom: 3px
+		font-size: 0
+	.counter__icon,
+	.counter__value
+		display: inline-block
+		vertical-align: middle
+	.counter__icon
+		margin-right: 20px
+		.icon
+			font-size: 64px
+	.counter__value
+		height: 78px
+		font-size: 90px
+	.counter__title
+		font-size: 30px
+		text-transform: uppercase
+		letter-spacing: 2px 
+	.counter__text
+		font-size: 24px
 
 
 
