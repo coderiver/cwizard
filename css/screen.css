@@ -72,6 +72,7 @@ button { background: transparent; }
 @media only screen and (max-width: 1020px) { .footer .footer__copyright { padding: 0 10px 0 0; line-height: 50px; font-size: 12px; } }
 
 .container { position: absolute; top: 60px; bottom: 60px; left: 0; right: 0; z-index: 2; }
+.container.container_page { position: relative; top: 0; bottom: auto; }
 @media only screen and (max-width: 1020px) { .container { top: 50px; bottom: 50px; } }
 @media only screen and (max-width: 760px) { .container { bottom: 0; } }
 
@@ -252,13 +253,14 @@ button { background: transparent; }
 .universities { padding: 0 10px; font-size: 0; }
 .universities.universities_mobile { display: none; padding: 0; }
 @media only screen and (max-width: 760px) { .universities.universities_mobile.is-show { display: block; } }
-.universities .universities__item { padding-top: 10px; text-align: center; }
-.universities .universities__pager { position: relative; margin-top: -30px; text-align: center; font-size: 0; z-index: 2; }
+.universities .universities__item { display: inline-block; width: 300px; margin: 0 10px 30px; }
+@media only screen and (max-width: 760px) { .universities .universities__item { margin: 0; padding: 10px 0; } }
+.universities .universities__pager { position: relative; text-align: center; font-size: 0; z-index: 2; }
 .universities .universities__prev, .universities .universities__next, .universities .universities__pages { display: inline-block; vertical-align: middle; font-size: 12px; color: #92929d; }
 .universities .universities__prev, .universities .universities__next { padding: 10px; }
 .universities .universities__pages { padding-bottom: 2px; }
 
-.university { display: inline-block; width: 300px; margin: 0 10px 30px; background: white; box-shadow: 0 1px 3px #c2c9ce; vertical-align: top; color: #23232c; text-align: left; -webkit-transition: box-shadow 0.2s; -moz-transition: box-shadow 0.2s; -o-transition: box-shadow 0.2s; transition: box-shadow 0.2s; }
+.university { display: block; width: 300px; margin: 0 auto; background: white; box-shadow: 0 1px 3px #c2c9ce; vertical-align: top; color: #23232c; text-align: left; -webkit-transition: box-shadow 0.2s; -moz-transition: box-shadow 0.2s; -o-transition: box-shadow 0.2s; transition: box-shadow 0.2s; }
 .university:hover { box-shadow: 0 0 0 3px #fd8e26, 0 1px 3px 3px #c2c9ce; }
 .university .university__pic img { max-width: 100%; }
 .university .university__info { padding: 0 20px 15px; }

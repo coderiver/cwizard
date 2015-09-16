@@ -12,7 +12,8 @@ head.ready(function() {
 		var steps   = $('.js-steps'),
 			btn     = steps.find('.js-steps-btn'),
 			item    = steps.find('.js-steps-item'),
-			section = $('.js-section');
+			section = $('.js-section'),
+			list    = $('.js-universities-list');
 		btn.on('click', function () {
 			var _this = $(this),
 				index = _this.index();
@@ -23,6 +24,27 @@ head.ready(function() {
 				item.eq(index).show();
 				if (index == 2) {
 					section.addClass('is-list-show');
+					if (!list.hasClass('is-inited')) {
+						list.addClass('is-inited');
+						list.slick({
+							arrows: false,
+							responsive: [{
+								breakpoint: 2560,
+								settings: 'unslick'
+							},{
+								breakpoint: 760,
+								settings: {
+									slidesToShow: 1
+								}
+							}]
+						});
+						prev.on('click', function () {
+							list.slick('prev');
+						});
+						next.on('click', function () {
+							list.slick('next');
+						});
+					};
 				}
 				else {
 					section.removeClass('is-list-show');
@@ -75,20 +97,30 @@ head.ready(function() {
 		};
 	}());
 
-	// university slider
+	// moves universities
 	(function () {
-		var sl   = $('.js-university-slider'),
-			prev = $('.js-university-prev'),
-			next = $('.js-university-next');
-		if (sl.length) {
-			sl.slick({
-				arrows: false
-			});
-			prev.on('click', function () {
-				sl.slick('prev');
-			});
-			next.on('click', function () {
-				sl.slick('next');
+		var universities = $('.js-universities');
+		if (universities.length) {
+			var list   = $('.js-universities-list'),
+				slider = $('.js-universities-slider'),
+				prev   = $('.js-universities-prev'),
+				next   = $('.js-universities-next');
+			function moveItems (windowWidth) {
+				if (windowWidth < 760) {
+					list.prependTo(slider);
+				}
+				else {
+
+					list.prependTo(universities);
+				};
+			}
+			var w = $(window).width();
+			// init
+			moveItems(w);
+			$(window).resize(function () {
+				var w = $(window).width();
+				// init
+				moveItems(w);
 			});
 		};
 	}());

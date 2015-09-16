@@ -209,6 +209,10 @@ button
 	left: 0
 	right: 0
 	z-index: 2
+	&.container_page
+		position: relative
+		top: 0
+		bottom: auto
 	+r(1020)
 		top: 50px
 		bottom: 50px
@@ -794,11 +798,14 @@ button
 			+r(760)
 				display: block
 	.universities__item
-		padding-top: 10px
-		text-align: center
+		display: inline-block
+		width: 300px
+		margin: 0 10px 30px
+		+r(760)
+			margin: 0
+			padding: 10px 0
 	.universities__pager
 		position: relative
-		margin-top: -30px
 		text-align: center
 		font-size: 0
 		z-index: 2
@@ -816,9 +823,9 @@ button
 		padding-bottom: 2px
 
 .university
-	display: inline-block
+	display: block
 	width: 300px
-	margin: 0 10px 30px
+	margin: 0 auto
 	background: #FFF
 	box-shadow: 0 1px 3px #C2C9CE
 	vertical-align: top
