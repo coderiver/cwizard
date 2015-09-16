@@ -2335,6 +2335,48 @@ button
 		+r(760)
 			font-size: 16px
 
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	min-width: 320px
+	padding: 80px 20px
+	background: rgba(#000,.5) 
+	overflow: auto
+	+vertical
+	z-index: 89 
+	+r(1020)
+		padding: 70px 20px
+	+r(760)
+		padding: 60px 10px
+	.popup__in
+		display: inline-block
+		position: relative
+		width: 100%
+		max-width: 940px
+		vertical-align: middle
+		text-align: left
+	.popup__chapter
+		margin: 0
+		box-shadow: 0 1px 13px rgba(26, 26, 25, 0.8)
+	.popup__close
+		position: absolute
+		top: 25px
+		right: 50px
+		font-size: 0
+		color: #209D5C
+		opacity: .3  
+		+tr(opacity .2s)
+		z-index: 10
+		+r(760)
+			top: 27px
+			right: 20px
+		&:hover
+			opacity: 1 
+		.icon
+			font-size: 24px  
 
 
 
