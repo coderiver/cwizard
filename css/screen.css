@@ -489,14 +489,22 @@ button { background: transparent; }
 .stats .stats__item + .stats__item { margin-top: 30px; }
 @media only screen and (max-width: 760px) { .stats .stats__item + .stats__item { margin-top: 20px; } }
 .stats .stats__item_orange { background: #fd8e26; color: white; }
+.stats .stats__item_big { padding: 23px 20px; }
+@media only screen and (max-width: 1020px) { .stats .stats__item_big { padding: 20px 10px; } }
 .stats .stats__item_big .stats__icon .icon { font-size: 62px; }
+@media only screen and (max-width: 760px) { .stats .stats__item_big .stats__icon .icon { font-size: 42px; } }
 .stats .stats__item_big .stats__value-number { height: 78px; font-size: 90px; }
+@media only screen and (max-width: 760px) { .stats .stats__item_big .stats__value-number { height: 54px; font-size: 62px; } }
 .stats .stats__item_big .stats__title { font-size: 20px; }
+@media only screen and (max-width: 760px) { .stats .stats__item_big .stats__title { padding: 0; font-size: 16px; } }
 .stats .stats__item_ratio { padding: 23px 37px; }
 .stats .stats__item_ratio .stats__icon, .stats .stats__item_ratio .stats__value { padding-right: 15px; }
 .stats .stats__item_ratio .stats__icon .icon { font-size: 64px; }
+@media only screen and (max-width: 760px) { .stats .stats__item_ratio .stats__icon .icon { font-size: 40px; } }
 .stats .stats__item_ratio .stats__value-number { height: 78px; font-size: 90px; }
+@media only screen and (max-width: 760px) { .stats .stats__item_ratio .stats__value-number { height: 50px; font-size: 55px; } }
 .stats .stats__item_ratio .stats__title { font-size: 24px; line-height: 1; }
+@media only screen and (max-width: 760px) { .stats .stats__item_ratio .stats__title { font-size: 14px; } }
 .stats .stats__icon, .stats .stats__value, .stats .stats__title { display: table-cell; vertical-align: middle; }
 .stats .stats__icon, .stats .stats__value { padding-right: 10px; }
 .stats .stats__icon { font-size: 0; }
@@ -757,6 +765,7 @@ button { background: transparent; }
 @media only screen and (max-width: 760px) { .graph .graph__country { font-size: 12px; } }
 
 .average { padding: 25px 20px 20px; background: #b7b8bc; font-family: "Gotham Black", Arial, sans-serif; text-align: center; }
+@media only screen and (max-width: 1020px) { .average { max-width: 365px; } }
 .average.average_orange { background: #fd8e26; color: white; }
 .average .average__money { font-size: 71px; line-height: 1; letter-spacing: -5px; }
 @media only screen and (max-width: 760px) { .average .average__money { font-size: 50px; letter-spacing: -2px; } }
@@ -770,16 +779,22 @@ button { background: transparent; }
 @media only screen and (max-width: 760px) { .average .average__text { font-size: 14px; } }
 
 .date { margin-bottom: 25px; padding: 25px 20px; background: #b7b8bc; font-family: "Gotham Black", Arial, sans-serif; text-align: center; }
+@media only screen and (max-width: 1020px) { .date { max-width: 365px; } }
+@media only screen and (max-width: 760px) { .date { padding: 20px; } }
 .date.date_orange { background: #fd8e26; color: white; }
 .date .date__head { margin-bottom: 12px; font-size: 0; }
 .date .date__icon, .date .date__value { display: inline-block; vertical-align: middle; }
 .date .date__icon { margin-right: 17px; }
 .date .date__icon .icon { font-size: 50px; }
+@media only screen and (max-width: 760px) { .date .date__icon .icon { font-size: 40px; } }
 .date .date__value { height: 60px; font-size: 70px; line-height: 1; letter-spacing: -2px; }
+@media only screen and (max-width: 760px) { .date .date__value { height: 48px; font-size: 55px; } }
 .date .date__value span { position: relative; top: -2px; font-family: "Gotham Book", Arial, sans-serif; font-size: 55px; vertical-align: middle; }
 .date .date__title { font-size: 38px; letter-spacing: 8px; text-transform: uppercase; line-height: 1; }
+@media only screen and (max-width: 760px) { .date .date__title { font-size: 24px; } }
 .date .date__title_sm { font-size: 26px; letter-spacing: 1px; }
-.date .date__text { font-size: 18px; }
+@media only screen and (max-width: 760px) { .date .date__title_sm { font-size: 19px; } }
+.date .date__text { font-size: 18px; font-size: 14px; }
 
 .list { margin-bottom: 40px; }
 .list .list__item { margin-bottom: 20px; *zoom: 1; }
@@ -789,13 +804,19 @@ button { background: transparent; }
 .list .list__content { display: table; font-family: "Gotham Black", Arial, sans-serif; font-size: 26px; color: #fd8e26; text-transform: uppercase; line-height: 1.2; }
 
 .counter { padding: 25px 20px; background: #b7b8bc; font-family: "Gotham Black", Arial, sans-serif; text-align: center; line-height: 1; }
+@media only screen and (max-width: 1020px) { .counter { max-width: 365px; } }
+@media only screen and (max-width: 760px) { .counter { padding: 20px; } }
 .counter .counter__head { margin-bottom: 3px; font-size: 0; }
 .counter .counter__icon, .counter .counter__value { display: inline-block; vertical-align: middle; }
 .counter .counter__icon { margin-right: 20px; }
 .counter .counter__icon .icon { font-size: 64px; }
+@media only screen and (max-width: 760px) { .counter .counter__icon .icon { font-size: 40px; } }
 .counter .counter__value { height: 78px; font-size: 90px; }
+@media only screen and (max-width: 760px) { .counter .counter__value { height: 48px; font-size: 55px; } }
 .counter .counter__title { font-size: 30px; text-transform: uppercase; letter-spacing: 2px; }
+@media only screen and (max-width: 760px) { .counter .counter__title { font-size: 18px; } }
 .counter .counter__text { font-size: 24px; }
+@media only screen and (max-width: 760px) { .counter .counter__text { font-size: 16px; } }
 
 .slick-slider { position: relative; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 

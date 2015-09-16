@@ -1355,14 +1355,25 @@ button
 		background: $orange
 		color: #FFF
 	.stats__item_big
+		padding: 23px 20px
+		+r(1020)
+			padding: 20px 10px
 		.stats__icon
 			.icon
 				font-size: 62px
+				+r(760)
+					font-size: 42px
 		.stats__value-number
 			height: 78px
 			font-size: 90px
+			+r(760)
+				height: 54px
+				font-size: 62px
 		.stats__title
 			font-size: 20px
+			+r(760)
+				padding: 0
+				font-size: 16px
 	.stats__item_ratio
 		padding: 23px 37px
 		.stats__icon,
@@ -1371,12 +1382,19 @@ button
 		.stats__icon
 			.icon
 				font-size: 64px
+				+r(760)
+					font-size: 40px
 		.stats__value-number
 			height: 78px
 			font-size: 90px
+			+r(760)
+				height: 50px
+				font-size: 55px
 		.stats__title
 			font-size: 24px
 			line-height: 1
+			+r(760)
+				font-size: 14px
 	.stats__icon,
 	.stats__value,
 	.stats__title
@@ -2163,6 +2181,8 @@ button
 	background: #b7b8bc
 	+fbl
 	text-align: center
+	+r(1020)
+		max-width: 365px
 	&.average_orange
 		background: $orange
 		color: #fff
@@ -2198,6 +2218,10 @@ button
 	background: #b7b8bc
 	+fbl
 	text-align: center
+	+r(1020)
+		max-width: 365px
+	+r(760)
+		padding: 20px
 	&.date_orange
 		background: $orange
 		color: #FFF
@@ -2212,11 +2236,16 @@ button
 		margin-right: 17px
 		.icon
 			font-size: 50px
+			+r(760)
+				font-size: 40px
 	.date__value
 		height: 60px
 		font-size: 70px
 		line-height: 1
-		letter-spacing: -2px 
+		letter-spacing: -2px
+		+r(760)
+			height: 48px
+			font-size: 55px
 		span
 			position: relative
 			top: -2px
@@ -2228,11 +2257,16 @@ button
 		letter-spacing: 8px
 		text-transform: uppercase
 		line-height: 1
+		+r(760)
+			font-size: 24px
 	.date__title_sm
 		font-size: 26px
-		letter-spacing: 1px 
+		letter-spacing: 1px
+		+r(760)
+			font-size: 19px
 	.date__text
 		font-size: 18px
+		font-size: 14px 
 
 .list
 	margin-bottom: 40px
@@ -2260,6 +2294,10 @@ button
 	+fbl
 	text-align: center
 	line-height: 1
+	+r(1020)
+		max-width: 365px
+	+r(760)
+		padding: 20px
 	.counter__head
 		margin-bottom: 3px
 		font-size: 0
@@ -2271,15 +2309,24 @@ button
 		margin-right: 20px
 		.icon
 			font-size: 64px
+			+r(760)
+				font-size: 40px
 	.counter__value
 		height: 78px
 		font-size: 90px
+		+r(760)
+			height: 48px
+			font-size: 55px
 	.counter__title
 		font-size: 30px
 		text-transform: uppercase
-		letter-spacing: 2px 
+		letter-spacing: 2px
+		+r(760)
+			font-size: 18px
 	.counter__text
 		font-size: 24px
+		+r(760)
+			font-size: 16px
 
 
 
