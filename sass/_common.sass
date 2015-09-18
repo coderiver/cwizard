@@ -791,6 +791,7 @@ button
 .universities
 	padding: 0 10px
 	font-size: 0
+	text-align: center
 	&.universities_mobile
 		display: none
 		padding: 0
@@ -801,6 +802,7 @@ button
 		display: inline-block
 		width: 300px
 		margin: 0 10px 30px
+		text-align: left
 		+r(760)
 			margin: 0
 			padding: 10px 0
@@ -1022,11 +1024,15 @@ button
 		margin: 0
 		box-shadow: none
 		+r(760)
-			display: none
+			margin-left: -40px
 		.chapter__head
 			padding: 20px 30px 20px 40px
 			background: #bfe1cf
-			box-shadow: none 
+			box-shadow: none
+			+r(760)
+				padding: 15px 20px
+			& + .chapter__body
+				padding: 25px 20px
 		.chapter__body
 			display: none
 			position: relative
@@ -1049,6 +1055,8 @@ button
 					margin-right: -8px
 		.chapter__title
 			font-size: 20px
+			+r(760)
+				font-size: 14px
 	.chapter__head
 		position: relative
 		display: table
@@ -1092,6 +1100,8 @@ button
 				text-align: center
 	.chapter__cell-btn
 		min-width: 280px
+		+r(760)	
+			min-width: 100%
 	.chapter__body
 		padding: 50px
 		+r(1020)
@@ -1279,6 +1289,9 @@ button
 	+r(760)
 		margin-bottom: 20px
 
+.wrap-courses
+	display: none
+
 .wrap-text
 	position: relative
 	overflow: hidden
@@ -1463,7 +1476,12 @@ button
 	.tabs__nav
 		font-size: 0
 		+r(760)
-			padding-left: 40px
+			display: none
+	.tabs__nav-mob
+		display: none
+		padding-left: 40px
+		+r(760)
+			display: block
 	.tabs__btn
 		width: 50%
 		height: 100px
@@ -1499,6 +1517,8 @@ button
 				.icon-arrow-down
 					top: -2px
 					+rotate(180)
+	.tabs__item
+		display: none
 
 .studies
 	display: flex
@@ -1939,7 +1959,8 @@ button
 		float: left
 		margin: 9px 30px 0 0
 		font-size: 32px
-		color: #BDBDBF 
+		color: #BDBDBF
+		cursor: pointer
 	.course__head-icon
 		float: left
 		width: 50px
@@ -2001,6 +2022,7 @@ button
 		background: #f7f7f5
 		cursor: pointer
 		+clr
+		+nosel
 		+r(1020)
 			padding-left: 60px
 		+r(760)

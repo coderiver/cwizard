@@ -50,6 +50,7 @@ head.ready(function() {
 					section.removeClass('is-list-show');
 				}
 			};
+			return false;
 		});
 	}());
 
@@ -138,7 +139,106 @@ head.ready(function() {
 			content.toggleClass('is-gray');
 			filters.toggleClass('is-show');
 			universities.toggleClass('is-show');
+			return false;
 		});
 	}());
+
+	// tabs
+	(function () {
+		var tabs = $('.js-tabs');
+		if (tabs.length) {
+			tabs.each(function () {
+				var _this = $(this),
+					btn   = _this.find('.js-tabs-btn'),
+					item  = _this.find('.js-tabs-item');
+				btn.on('click', function () {
+					var _this = $(this),
+						el    = _this.data('tab');
+					if (!_this.hasClass('is-active')) {
+						btn.removeClass('is-active');
+						$('.js-tabs-btn[data-tab="' + el + '"]').addClass('is-active');
+						item.hide();
+						$(el).fadeIn();
+					};
+					return false;
+				});
+			});
+		};
+	}());
+
+	// accordeon
+	(function () {
+		var accos = $('.js-accos');
+		if (accos.length) {
+			accos.each(function () {
+				var _this = $(this),
+					item  = _this.find('.js-accos-item'),
+					head  = _this.find('.js-accos-head'),
+					body  = _this.find('.js-accos-body');
+				head.on('click', function () {
+					var _this  = $(this),
+						parent = _this.parent(),
+						next   = _this.next();
+					if (parent.hasClass('is-active')) {
+						item.removeClass('is-active');
+						body.slideUp();
+					}
+					else {
+						item.removeClass('is-active');
+						body.slideUp();
+						parent.addClass('is-active');
+						next.slideDown();
+					}
+					return false;
+				});
+			});
+		};
+	}());
+
+	// toggle
+	(function () {
+		var toggle = $('.js-toggle');
+		toggle.each(function () {
+			var _this = $(this),
+				btn   = _this.find('.js-toggle-btn'),
+				body  = _this.find('.js-toggle-body');
+			btn.on('click', function () {
+				btn.toggleClass('is-active');
+				body.slideToggle();
+				return false;
+			});
+		});
+	}());
+
+	// studies and courses
+	(function () {
+		var studies = $('.js-studies'),
+			item    = $('.js-studies-item'),
+			courses = $('.js-courses'),
+			back    = $('.js-courses-back');
+		item.on('click', function () {
+			studies.hide();
+			courses.fadeIn();
+			return false;
+		});
+		back.on('click', function () {
+			courses.hide();
+			studies.fadeIn();
+			return false;
+		});
+	}());
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
