@@ -829,7 +829,7 @@ button { background: transparent; }
 .counter .counter__text { font-size: 24px; }
 @media only screen and (max-width: 760px) { .counter .counter__text { font-size: 16px; } }
 
-.popup { position: fixed; top: 0; left: 0; right: 0; bottom: 0; min-width: 320px; padding: 80px 20px; background: rgba(0, 0, 0, 0.5); overflow: auto; text-align: center; font-size: 0; z-index: 89; }
+.popup { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; min-width: 320px; padding: 80px 20px; background: rgba(0, 0, 0, 0.5); overflow: auto; text-align: center; font-size: 0; z-index: 89; }
 .popup:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 @media only screen and (max-width: 1020px) { .popup { padding: 70px 20px; } }
 @media only screen and (max-width: 760px) { .popup { padding: 60px 10px; } }

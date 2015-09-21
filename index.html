@@ -614,7 +614,7 @@
 								<button class="steps__prev">back</button>
 							</div>
 							<div class="steps__btn">
-								<button class="steps__help">help?</button>
+								<button class="steps__help js-popup-btn" data-popup="js-popup-form">help?</button>
 							</div>
 						</div>
 					</div>
@@ -648,7 +648,7 @@
 					</div>
 					<div class="links__title">Search university <br><span>by field of study</span></div>
 				</a>
-				<a class="links__item" href="#">
+				<a class="links__item js-popup-btn" href="#" data-popup="js-popup-form">
 					<div class="links__icon">
 						<i class="icon icon-contact"></i>
 					</div>
@@ -658,6 +658,66 @@
 		</div>
 		<div class="footer__copyright">© Study Without Borders, 2015</div>
 	</footer>
+	<!-- popup -->
+	<div class="popup js-popup js-popup-form">
+		<div class="popup__in">
+			<button class="popup__close js-popup-close">
+				<i class="icon icon-close"></i>
+			</button>
+			<!-- chapter -->
+			<div class="chapter chapter_form chapter_popup">
+				<div class="chapter__head">
+					<div class="chapter__title">Contact a counselor</div>
+				</div>
+				<div class="chapter__body">
+					<!-- l -->
+					<div class="l">
+						<div class="col">
+							<!-- text -->
+							<div class="text">
+								<p>The four main school counseling program interventions used include: school counseling core curriculum classroom lessons and annual academic, career readiness, and personal planning for every student.</p>
+								<p>School counseling is an integral part of the education system in large numbers of countries and in others it is emerging as a critical support for elementary, middle, and high school learning.</p>
+							</div>
+						</div>
+						<div class="col">
+							<!-- form -->
+							<div class="form">
+								<!-- field -->
+								<div class="form__field field">
+									<div class="field__label">Your name</div>
+									<div class="field__in">
+										<input class="input" type="text" value="Ayooluwakunmi Omowale">
+									</div>
+								</div>
+								<!-- field -->
+								<div class="form__field field">
+									<div class="field__label">Your email</div>
+									<div class="field__in">
+										<input class="input" type="text" placeholder="Example: your.name@mail.com">
+									</div>
+								</div>
+								<!-- field -->
+								<div class="form__field field">
+									<div class="field__label">Your phone</div>
+									<div class="field__in">
+										<input class="input" type="text" placeholder="+234 1 ___-____">
+									</div>
+								</div>
+								<!-- field -->
+								<div class="form__field field">
+									<div class="field__label">Any comments to add?</div>
+									<div class="field__in">
+										<textarea class="input input_area"></textarea>
+									</div>
+								</div>
+								<button class="form__btn btn">SEND request</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

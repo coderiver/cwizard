@@ -197,16 +197,36 @@ head.ready(function() {
 
 	// toggle
 	(function () {
-		var toggle = $('.js-toggle');
-		toggle.each(function () {
+		var go = $('.js-goto'),
+			el = $('.js-goto-el');
+		go.on('click', function () {
 			var _this = $(this),
-				btn   = _this.find('.js-toggle-btn'),
-				body  = _this.find('.js-toggle-body');
-			btn.on('click', function () {
-				btn.toggleClass('is-active');
-				body.slideToggle();
-				return false;
-			});
+				el  = _this.data('goto'),
+				pos   = $('.' + el).offset().top;
+			$('html, body').animate({
+				scrollTop: pos
+			}, 700);
+			return false;
+		});
+	}());
+
+	// popup
+	(function () {
+		var btn = $('.js-popup-btn'),
+			popup = $('.js-popup'),
+			close = $('.js-popup-close');
+		btn.on('click', function () {
+			var _this = $(this),
+				el    = _this.data('popup');
+			btn.removeClass('is-active');
+			_this.addClass('is-active');
+			$('.' + el).fadeIn();
+			return false;
+		});
+		close.on('click', function () {
+			btn.removeClass('is-active');
+			popup.fadeOut();
+			return false;
 		});
 	}());
 
