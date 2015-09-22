@@ -254,7 +254,7 @@ button { background: transparent; }
 .universities.universities_mobile { display: none; padding: 0; }
 @media only screen and (max-width: 760px) { .universities.universities_mobile.is-show { display: block; } }
 .universities .universities__item { display: inline-block; width: 300px; margin: 0 10px 30px; text-align: left; }
-@media only screen and (max-width: 760px) { .universities .universities__item { margin: 0; padding: 10px 0; } }
+@media only screen and (max-width: 760px) { .universities .universities__item { display: block; margin: 0 auto; padding: 10px 0; } }
 .universities .universities__pager { position: relative; text-align: center; font-size: 0; z-index: 2; }
 .universities .universities__prev, .universities .universities__next, .universities .universities__pages { display: inline-block; vertical-align: middle; font-size: 12px; color: #92929d; }
 .universities .universities__prev, .universities .universities__next { padding: 10px; }
@@ -409,7 +409,20 @@ button { background: transparent; }
 @media only screen and (max-width: 760px) { .chapter .chapter__pic { margin: 0 -20px 20px; } }
 .chapter .chapter__pic img { display: block; width: 100%; }
 
-.info { background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; color: white; }
+@media only screen and (min-width: 761px) { .info.is-fixed .info__bg { position: fixed; top: 60px; left: 0; right: 300px; z-index: 20; }
+  .info.is-fixed .info__wrap { padding: 10px 20px 10px 60px; }
+  .info.is-fixed .info__logo { width: 50px; height: 50px; padding: 5px; }
+  .info.is-fixed .info__in { margin: 0 0 0 70px; *zoom: 1; }
+  .info.is-fixed .info__in:after { content: " "; display: table; clear: both; }
+  .info.is-fixed .info__title { float: left; max-width: 60%; margin: 0; padding: 11px 0; font-size: 28px; }
+  .info.is-fixed .info__address { padding: 15px 0 11px 40px; overflow: hidden; }
+  .info.is-fixed .info__address-wrap { float: right; }
+  .info.is-fixed .info__address-in { font-size: 16px; }
+  .info.is-fixed .info__details { display: none; } }
+@media only screen and (min-width: 761px) and (max-width: 1340px) { .info.is-fixed .info__bg { right: 80px; } }
+@media only screen and (min-width: 761px) and (max-width: 1020px) { .info.is-fixed .info__bg { top: 50px; } }
+@media only screen and (min-width: 761px) and (max-width: 1020px) { .info.is-fixed .info__in { padding: 0; } }
+.info .info__bg { background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; color: white; }
 .info .info__wrap { padding: 40px 30px; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0.7))); background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); }
 @media only screen and (max-width: 1020px) { .info .info__wrap { padding: 20px 20px 40px 50px; } }
 @media only screen and (max-width: 760px) { .info .info__wrap { padding: 20px; } }
@@ -426,9 +439,10 @@ button { background: transparent; }
 @media only screen and (max-width: 760px) { .info .info__title { font-size: 28px; } }
 .info .info__address { font-size: 18px; }
 @media only screen and (max-width: 760px) { .info .info__address { margin-bottom: 20px; font-size: 14px; } }
-.info .info__address-icon { float: left; margin-right: 10px; }
+.info .info__address-icon, .info .info__address-in { display: table-cell; vertical-align: top; }
+@media only screen and (max-width: 760px) { .info .info__address-icon, .info .info__address-in { display: block; } }
+.info .info__address-icon { float: left; padding-right: 10px; }
 @media only screen and (max-width: 760px) { .info .info__address-icon { display: none; } }
-.info .info__address-in { overflow: hidden; }
 .info .info__details { margin-left: 210px; font-size: 0; }
 @media only screen and (max-width: 1020px) { .info .info__details { margin: 0; } }
 @media only screen and (max-width: 760px) { .info .info__details { display: table; margin: 0 auto; } }

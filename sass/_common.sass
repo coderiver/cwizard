@@ -804,7 +804,8 @@ button
 		margin: 0 10px 30px
 		text-align: left
 		+r(760)
-			margin: 0
+			display: block
+			margin: 0 auto
 			padding: 10px 0
 	.universities__pager
 		position: relative
@@ -1132,8 +1133,47 @@ button
 			width: 100%
 
 .info
-	+cover
-	color: #FFF
+	&.is-fixed
+		+rm(761)
+			.info__bg
+				position: fixed
+				top: 60px
+				left: 0
+				right: 300px
+				z-index: 20
+				+r(1340)
+					right: 80px
+				+r(1020)
+					top: 50px
+			.info__wrap
+				padding: 10px 20px 10px 60px
+			.info__logo
+				width: 50px
+				height: 50px
+				padding: 5px
+			.info__in
+				margin: 0 0 0 70px
+				+clr
+				+r(1020)
+					padding: 0
+			.info__title
+				float: left
+				max-width: 60%
+				margin: 0
+				padding: 11px 0
+				font-size: 28px
+			.info__address
+				padding: 15px 0 11px 40px
+				overflow: hidden
+			.info__address-wrap
+				float: right
+			.info__address-in
+				font-size: 16px
+			.info__details
+				display: none
+	.info__bg
+		+cover
+		color: #FFF
 	.info__wrap
 		padding: 40px 30px
 		+g(rgba(#000,.5), rgba(#000,.7))
@@ -1186,13 +1226,17 @@ button
 		+r(760)
 			margin-bottom: 20px
 			font-size: 14px
+	.info__address-icon,
+	.info__address-in
+		display: table-cell
+		vertical-align: top
+		+r(760)
+			display: block
 	.info__address-icon
 		float: left
-		margin-right: 10px
+		padding-right: 10px
 		+r(760)
 			display: none
-	.info__address-in
-		overflow: hidden
 	.info__details
 		margin-left: 210px
 		font-size: 0
