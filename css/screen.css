@@ -88,7 +88,7 @@ button { background: transparent; }
 .section.is-list-show .selected__title { color: #46464e; }
 .section.is-scroll .section__head:after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px; background: rgba(0, 0, 0, 0.15); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15) inset; }
 .section .section__bg, .section .section__wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.section .section__bg { background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-image: url(../img/bg.jpg); opacity: 0.6; }
+.section .section__bg { background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-image: url(../img/bg.jpg); opacity: 0.8; }
 .section .section__wrap { z-index: 2; }
 .section .section__head, .section .section__body { position: absolute; left: 0; right: 0; }
 .section .section__head { top: 0; z-index: 4; }
@@ -382,14 +382,17 @@ button { background: transparent; }
 @media only screen and (max-width: 760px) { .chapter.chapter_form_sm .chapter__title { font-size: 14px; } }
 .chapter .chapter__head { position: relative; display: table; width: 100%; padding: 20px 50px; background: #f7f7f5; box-shadow: 0 1px 3px #c2c9ce; *zoom: 1; z-index: 4; }
 .chapter .chapter__head:after { content: " "; display: table; clear: both; }
-@media only screen and (max-width: 760px) { .chapter .chapter__head { padding: 25px 20px; background: none; box-shadow: none; }
-  .chapter .chapter__head + .chapter__body { padding-top: 0; } }
+@media only screen and (max-width: 760px) { .chapter .chapter__head { padding: 25px 20px; background: none; box-shadow: none; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+  .chapter .chapter__head.is-active .chapter__head-arrow { -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); } }
 .chapter .chapter__head-arrow, .chapter .chapter__head-icon { display: none; float: left; font-size: 0; }
 @media only screen and (max-width: 760px) { .chapter .chapter__head-arrow, .chapter .chapter__head-icon { display: block; } }
 .chapter .chapter__head-arrow { margin: 10px 15px 0 0; }
 .chapter .chapter__head-arrow .icon { font-size: 8px; color: #b7b8bc; }
 .chapter .chapter__head-icon { margin: 0 10px 0 0; }
 .chapter .chapter__head-icon .icon { font-size: 30px; }
+@media only screen and (max-width: 760px) { .chapter .chapter__wrap { display: none; }
+  .chapter .chapter__wrap.is-show { display: block; }
+  .chapter .chapter__wrap .chapter__body { padding-top: 0; } }
 .chapter .chapter__cell { display: table-cell; vertical-align: middle; }
 @media only screen and (max-width: 1020px) { .chapter .chapter__cell { display: block; } }
 .chapter .chapter__cell:last-child { padding-left: 20px; }

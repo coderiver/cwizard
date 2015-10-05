@@ -243,7 +243,25 @@ head.ready(function() {
 		});
 	}());
 
-
+	// chapter
+	(function () {
+		var head = $('.js-chapter-head'),
+			wrap = $('.js-chapter-wrap');
+		head.on('click', function () {
+			var _this = $(this);
+			if (_this.hasClass('is-active')) {
+				_this.removeClass('is-active');
+				_this.next().removeClass('is-show');
+			}
+			else {
+				head.removeClass('is-active');
+				_this.addClass('is-active');
+				wrap.removeClass('is-show');
+				_this.next().addClass('is-show');
+			}
+			
+		});
+	}());
 
 
 

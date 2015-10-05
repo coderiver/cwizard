@@ -270,7 +270,7 @@ button
 	.section__bg
 		+cover
 		background-image: url(../img/bg.jpg)
-		opacity: .6
+		opacity: .8
 	.section__wrap
 		z-index: 2
 	.section__head,
@@ -1071,8 +1071,11 @@ button
 			padding: 25px 20px
 			background: none
 			box-shadow: none
-			& + .chapter__body
-				padding-top: 0
+			cursor: pointer
+			+nosel
+			&.is-active
+				.chapter__head-arrow
+					+rotate(180)
 	.chapter__head-arrow,
 	.chapter__head-icon
 		display: none
@@ -1089,6 +1092,13 @@ button
 		margin: 0 10px 0 0
 		.icon
 			font-size: 30px
+	.chapter__wrap
+		+r(760)
+			display: none
+			&.is-show
+				display: block
+			.chapter__body
+				padding-top: 0
 	.chapter__cell
 		display: table-cell
 		vertical-align: middle
