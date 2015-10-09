@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-ko7e9m');
-	src:url('fonts/icomoon.eot?#iefix-ko7e9m') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?-ko7e9m') format('truetype'),
-		url('fonts/icomoon.woff?-ko7e9m') format('woff'),
-		url('fonts/icomoon.svg?-ko7e9m#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?4f8i1n');
+	src:url('fonts/icomoon.eot?4f8i1n#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?4f8i1n') format('truetype'),
+		url('fonts/icomoon.woff?4f8i1n') format('woff'),
+		url('fonts/icomoon.svg?4f8i1n#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,36 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-academic-quality:before {
+	content: "\e800";
+}
+.icon-application-basics:before {
+	content: "\e801";
+}
+.icon-campus2:before {
+	content: "\e802";
+}
+.icon-contact-a-counselor:before {
+	content: "\e803";
+}
+.icon-degree-programs:before {
+	content: "\e804";
+}
+.icon-fees2:before {
+	content: "\e805";
+}
+.icon-international-students-life:before {
+	content: "\e806";
+}
+.icon-prospects:before {
+	content: "\e807";
+}
+.icon-requirements:before {
+	content: "\e808";
+}
+.icon-university-intro:before {
+	content: "\e809";
+}
 .icon-rdquo:before {
 	content: "\e640";
 }
@@ -218,3 +248,4 @@
 .icon-world:before {
 	content: "\e63d";
 }
+
