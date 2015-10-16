@@ -1983,6 +1983,7 @@ button
 		color: #9FABAD 
 
 .form
+	position: relative
 	padding: 24px 27px 28px
 	background: #FFF 
 	border: 3px solid #209D5C
@@ -2455,10 +2456,33 @@ button
 		.icon
 			font-size: 24px  
 
-
-
-
-
+.thank
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: #209d5c
+	+vertical
+	.thank__wrap
+		display: inline-block
+		padding: 0 60px
+		vertical-align: middle
+		color: #FFF 
+	.thank__icon
+		margin-bottom: 35px
+		font-size: 0
+		.icon
+			font-size: 130px 
+	.thank__title
+		margin-bottom: 5px
+		letter-spacing: 2px 
+		+fbl
+		text-transform: uppercase
+		font-size: 32px
+	.thank__text
+		+fb
+		font-size: 16px
 
 
 

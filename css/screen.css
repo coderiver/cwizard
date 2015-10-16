@@ -698,7 +698,7 @@ button { background: transparent; }
 
 .field .field__label { margin-bottom: 6px; font-family: "Gotham Bold", Arial, sans-serif; font-size: 14px; color: #9fabad; }
 
-.form { padding: 24px 27px 28px; background: white; border: 3px solid #209d5c; box-shadow: 0 7px 15px rgba(194, 201, 206, 0.7); }
+.form { position: relative; padding: 24px 27px 28px; background: white; border: 3px solid #209d5c; box-shadow: 0 7px 15px rgba(194, 201, 206, 0.7); }
 @media only screen and (max-width: 760px) { .form { padding: 15px; } }
 .form .form__field { margin-bottom: 24px; }
 @media only screen and (max-width: 760px) { .form .form__field { margin-bottom: 20px; } }
@@ -856,6 +856,14 @@ button { background: transparent; }
 @media only screen and (max-width: 760px) { .popup .popup__close { top: 27px; right: 20px; } }
 .popup .popup__close:hover { opacity: 1; }
 .popup .popup__close .icon { font-size: 24px; }
+
+.thank { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #209d5c; text-align: center; font-size: 0; }
+.thank:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.thank .thank__wrap { display: inline-block; padding: 0 60px; vertical-align: middle; color: white; }
+.thank .thank__icon { margin-bottom: 35px; font-size: 0; }
+.thank .thank__icon .icon { font-size: 130px; }
+.thank .thank__title { margin-bottom: 5px; letter-spacing: 2px; font-family: "Gotham Black", Arial, sans-serif; text-transform: uppercase; font-size: 32px; }
+.thank .thank__text { font-family: "Gotham Bold", Arial, sans-serif; font-size: 16px; }
 
 .slick-slider { position: relative; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 
