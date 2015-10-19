@@ -7,6 +7,17 @@ head.ready(function() {
 		countSection();
 	});
 
+	// menu
+	(function () {
+		var btn  = $('.js-header-menu'),
+			menu = $('.js-footer');
+		btn.on('click', function () {
+			btn.toggleClass('is-active');
+			menu.toggleClass('is-active');
+			return false;
+		});
+	}());
+
 	// fixed info block
 	(function () {
 		var info = $('.js-info');

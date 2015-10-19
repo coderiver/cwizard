@@ -119,19 +119,55 @@ button
 	position: fixed
 	left: 0
 	right: 0
+	min-width: 320px
 	height: 60px
 	background: #FFF
 	box-shadow: 0 0 7px rgba(#000,.3)
-	z-index: 99
 	+r(1020)
 		height: 50px
 .header
 	top: 0
+	z-index: 99
 	.header__logo
 		float: left
 		margin-right: 10px
 		+r(1020)
 			margin: 0
+	.header__menu
+		display: none
+		float: right
+		position: relative
+		width: 60px
+		height: 50px
+		padding: 0 10px
+		font-size: 0
+		+r(760)
+			display: block
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			width: 20px
+			left: 50%
+			margin-left: -10px
+			+tr(all .4s)
+		&:before
+			top: 19px
+			height: 2px
+			background: #a0a0a0
+		&:after
+			top: 24px 
+			height: 7px
+			box-shadow: 0 2px 0 0 #a0a0a0 inset, 0 -2px 0 0 #a0a0a0 inset
+		&.is-active
+			&:before,
+			&:after
+				top: 24px 
+			&:before
+				+rotate(45)
+			&:after
+				height: 2px
+				+rotate(135)
 	.header__fb
 		position: relative
 		float: right
@@ -144,6 +180,8 @@ button
 		+vertical
 		+r(1020)
 			line-height: 50px
+		+r(760)
+			display: none
 		&:hover
 			background: #3A5898
 			color: #fff  
@@ -188,10 +226,24 @@ button
 			display: none
 .footer
 	bottom: 0
+	z-index: 97 
 	+r(760)
-		display: none
+		top: 0
+		bottom: auto
+		height: auto
+		max-height: 100%
+		padding-top: 50px
+		visibility: hidden
+		opacity: 0 
+		+tr(all .2s)
+		overflow: auto
+		&.is-active
+			visibility: visible
+			opacity: 1 
 	.footer__links
 		float: left
+		+r(760)
+			float: none
 	.footer__copyright
 		float: right
 		padding: 0 20px
@@ -201,6 +253,14 @@ button
 			padding: 0 10px 0 0
 			line-height: 50px
 			font-size: 12px
+		+r(760)
+			display: none
+	.footer__btn
+		padding: 25px 20px
+		border-top: 1px solid #eaeeef
+	.footer__btn-el
+		width: 100%
+		text-transform: none
 
 .container
 	position: absolute
@@ -342,10 +402,6 @@ button
 	.logo__thin
 		display: inline-block
 		font-size: 18px
-		+r(1020)
-			font-size: 0
-			&:first-letter
-				font-size: 18px
 	.logo__bold
 		+fb
 	.logo__thin
@@ -387,6 +443,8 @@ button
 
 .links
 	display: table
+	+r(760)
+		display: block
 	.links__item,
 	.links__icon,
 	.links__title
@@ -395,13 +453,23 @@ button
 		vertical-align: middle
 		+r(1020)
 			height: 42px
+		+r(760)
+			height: auto
 	.links__item
-		padding: 4px 20px
+		padding: 4px 20px 0
 		border-bottom: 4px solid transparent 
 		color: $gray
 		+tr(all .2s)
 		+r(1020)
-			padding: 4px 7px
+			padding: 4px 7px 0
+		+r(760)
+			display: block
+			padding: 24px 20px
+			box-shadow: 20px 2px 0 #f4f6f6
+			border: none
+			&:active,
+			&:last-child
+				box-shadow: none
 		&:hover
 			border-color: $orange
 		&:active,
@@ -421,17 +489,19 @@ button
 		padding-right: 10px
 		+r(1020)
 			padding-right: 5px
-		.icon
-			font-size: 30px
-			+r(1020)
-				font-size: 20px
+		+r(760)
+			padding-right: 10px
 	.links__pictures
 		display: inline-block
 		position: relative
 		img
+			width: auto
+			height: 31px
 			+tr(opacity .2s)
 			+r(1020)
-				max-height: 20px
+				height: 20px
+			+r(760)
+				height: 31px
 			&:last-child
 				position: absolute
 				top: 0
@@ -444,10 +514,14 @@ button
 			font-size: 12px
 		+r(1020)
 			line-height: 1
+		+r(760)
+			font-size: 14px
 		span
 			+fb
 			color: $gray
 			+tr(color .2s)
+			+r(760)
+				font-size: 18px
 
 .steps
 	position: absolute
